@@ -1,0 +1,285 @@
+@media screen and (max-width: 600px) {
+    #myappoinments{
+      background-color:#ddd;
+      width: 100%;
+      position: relative;
+      padding: 1% ; 
+      margin-top: 70px;
+    }
+    #schedule-head{
+        color: #fff ; 
+        background-color: #fff;
+        border-radius: 2px;
+        margin-top: 10px ;
+        margin-bottom: 10px ;
+        padding: 1%;
+    
+    }
+    #headcard{
+     
+        overflow-x: scroll ;
+        overflow-y: hidden ;
+         
+        height: 30px;
+        width: 510px ; 
+        
+      }
+      #headinfo{
+        color:#FF5545 !important; 
+        background-color: #d8d6d6;
+        text-align: center;
+        font-size: 15px;
+        border-radius: 5px;
+        margin-left: 4%;
+        margin-right: 4%;
+        padding: 1%;
+        width: 80px ; 
+        display: inline-block; 
+        
+    }
+    
+    #schedule{
+        height: 30px;
+        margin-bottom: 15px;
+        overflow-x: scroll;
+    }
+    #doctorlist {
+        background-color: #d8d6d6;
+        width: 100%;
+        position: relative;
+        padding: 1% ; 
+        margin-top: 70px;
+      }
+
+      #doc-img{
+        margin-left: 4%;
+        border: 1px solid #FF5545;
+    
+    }
+  }
+  @media screen and (min-width: 600px) {
+    #myappoinments{
+      background-color:#ddd;
+      width: 100%;
+      position: relative;
+      padding: 1%
+    }
+    #headtime{
+        color: #fff;
+        background-color: #FF5545;
+        font-size: 12px;
+        text-align: center;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 6%;
+        margin-bottom: 6%; 
+        padding: 1%;
+  
+    }
+    #headinfo{
+        color:#FF5545 !important; 
+        background-color: #d8d6d6;
+        text-align: center;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 6%;
+        margin-bottom: 6%;
+        padding: 1%;
+        
+    }
+    
+    #headcard{
+       
+      overflow: auto ; 
+      max-height: 63% ; 
+      
+    }
+  
+    #schedule{
+      max-height: 170px;
+      }
+      #doctorlist {
+          background-color: #d8d6d6;
+          width: 100%;
+          position: relative;
+          padding: 1%
+        }
+        #doc-img{
+            margin-left: 4%;
+            border: 1px solid #FF5545;
+        
+        }
+  }
+  #docicon{
+    color: #FF5545;
+}
+::-webkit-scrollbar { 
+    display: none; 
+  }
+    #navlinks {
+      border-right: 1px solid #FF5545;
+      color: white;
+    }
+    
+    .landing {
+      padding: 2%
+    }
+    
+    .homebuttons {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 10px;
+    }
+    
+    .image {
+      width: 100%;
+      height: 100%;
+    }
+    
+    #introheadline {
+      margin: 0 auto;
+      text-align: center;
+      padding: 7%;
+      color: #fff;
+    }
+    
+    .intro {
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 6%;
+    }
+    
+    #dropdown {
+      background: transparent;
+      border-radius: 5px;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 3%;
+      width: 100%;
+      text-align: left;
+    }
+    
+    #buttonsintro {
+      border-radius: 5px;
+      width: 100%;
+      color: #fff;
+      padding: 2%;
+      background-color: #FF5545;
+      border: 1px solid #FF5545 ; 
+      cursor: pointer;
+    }
+    
+    #introfooter {
+      margin: 5%;
+    }
+    
+    #buttonheader {
+      border: 1px solid white;
+      border-radius: 8px;
+      background: transparent;
+      color: white;
+    }
+    
+    
+    ::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      columns: #000000;;
+      opacity: 1;
+      /* Firefox */
+    }
+    
+    .shadow {
+      -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+      border: 0;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .myappointments-tabs{
+      background-color: transparent !important;
+    }
+    #myappointments-tabs{
+      background-color: #fff ; 
+      border-radius: 5px;
+      margin-top: 1%;
+    
+    }
+    #doccontent {
+      color: #FF5545;
+    }
+    #doc-name {
+      color: #FF5545;
+      font-size: 20px;
+    }
+    #list-info{
+      padding-bottom:5%; 
+    }
+    
+    #list-info-right{
+      margin-top:30%; 
+      padding-bottom:0.1%; 
+  
+    }
+    
+    #doc-img{
+      /* border : 1px solid #FF5545; */
+      width: 100px;
+      height: 100px;
+    
+    }
+    
+    #sec-head{
+      color: #FF5545;
+      text-align: center;
+      padding: 1%;
+    }
+    #sec-content{
+      padding: 3% ; 
+    
+    }
+    .circle {
+      background:transparent;
+      width: 40px;
+      height: 37px;
+      border-radius: 50%;
+      border: 1px solid #FF5545;
+      padding-left: 1%;
+    }
+    #profile-icons {
+      margin-top: 20%;
+      color: #FF5545;
+    }
+    #dropdowntab{
+      color: #FF5545 ; 
+      border: 1px solid #FF5545;
+    }
+    
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+      color: #FF5545 !important ; 
+      border-bottom: 3px solid #FF5545 !important ;
+      border: 1px solid #fff;
+  
+  }
+  .nav-tabs .nav-link{
+    color: #000000 ;
+    width: 100%;
+    font-weight: bolder ; 
+    
+  }
+  .nav-tabs .nav-link:hover{
+    border: 0px solid #ffffff;
+    
+  }
+  .nav-tabs {
+    border-bottom: 1px solid #ffffff;
+  }
+  
+  .tab-title{
+    font-size: 20px !important ; 
+    font-weight: bold  !important; 
+    margin-top:15px ; 
+  }
+    
+    
+    

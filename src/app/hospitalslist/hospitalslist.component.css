@@ -1,0 +1,216 @@
+@media screen and (max-width: 600px) {
+    #doctorlist {
+        background-color: #d8d6d6;
+        width: 100%;
+        position: relative;
+        padding: 1% ; 
+        margin-top: 70px; 
+      }
+      #doc-img{
+        margin-left: 4%;
+        border: 1px solid #FF5545;
+    
+    }
+  }
+  @media screen and (min-width: 600px) {
+    #doctorlist {
+        background-color: #d8d6d6;
+        width: 100%;
+        position: relative;
+        padding: 1% ; 
+        
+      }
+      #doc-img{
+        margin-left: 4%;
+        border: 1px solid #FF5545;
+    
+    }
+  }
+
+    
+    #navlinks {
+        border-right: 1px solid #FF5545;
+        color: white;
+    }
+  
+    .homebuttons { 
+        font-family: 'Times New Roman', Times, serif ; 
+        font-size: 10px ; 
+    }
+    .image {
+        width: 100%;
+        height: 100%;
+    }
+    #introheadline {
+        margin: 0 auto ; 
+        text-align: center ; 
+        padding: 7%;
+        color: #fff;
+    }
+    .intro {
+        margin: 0 auto ; 
+        text-align: center ; 
+        margin-top: 6%;
+    }
+    #dropdown{
+        background: transparent ; 
+        border-radius: 5px ; 
+        border: 1px solid #fff; 
+        color: #fff ;  
+        padding: 3%;
+        width: 100% ; 
+        text-align: left;
+    }
+    .buttonsintro {
+        border-radius: 5px ;
+        width: 100%; 
+        color: #fff;
+        padding: 2%;
+        margin-top: 10%;
+        background-color: #FF5545 ;
+        border: 1px solid #FF5545 ;
+        cursor: pointer;
+    }
+    #introfooter{
+        margin: 5%;
+    }
+    #info{
+        text-align: center ; 
+    }
+    
+    #buttonheader {
+        border: 1px solid white ;
+        border-radius: 8px; 
+        background: transparent;
+        color: white;
+    }
+    h2{
+        font-family: 'PT Sans', sans-serif;
+    
+    }
+    #deschead{
+        color: #FF5545 ; 
+    
+    }
+    #desccontent{
+        text-align: left;
+        color: #000000;
+    }
+ 
+    #headline{
+        color: #FF5545; 
+    }
+    #links{
+        color: #fff; 
+    }
+    ::placeholder{
+        color: #000000;
+    }
+    #footerhr{
+        background-color: #bbbbbbbb
+    }
+    
+  #doctorlist {
+      background-color: #d8d6d6;
+      width: 100%;
+      position: relative;
+      padding: 1%
+    }
+    #doclist-head{
+        color: #fff ; 
+        background-color: #FF5545;
+        border-radius: 5px;
+    
+    }
+    #doc-list{
+        margin-top: 15%;
+    }
+  
+    #docicon{
+        color: #FF5545;
+    }
+    #headtime{
+        color: #fff;
+        background-color: #FF5545;
+        font-size: 12px;
+        text-align: center;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 6%;
+        margin-bottom: 6%; 
+        padding: 1%;
+  
+    }
+    #headinfo{
+        color:#FF5545 !important; 
+        background-color: #d8d6d6;
+        text-align: center;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 6%;
+        margin-bottom: 6%;
+        padding: 1%;
+        
+    }
+    
+    #headcard{
+       
+      overflow: auto ; 
+      max-height: 43.5% ; 
+      
+    }
+    #sliderbtn{
+      color: #FF5545 ; 
+      width: 100%;
+      height: 50%;
+  }
+    
+    ::-webkit-scrollbar { 
+      display: none; 
+    }
+    
+    .filterdiv{
+      margin-bottom: 10% ;
+    }
+    #filterhead {
+      color: #FF5545 ; 
+    
+    }
+    #filtercontent{
+      overflow: auto ; 
+      max-height: 180px ;
+    }
+    hr{
+      background-color: #FF5545;
+    
+    }
+    
+    .page {
+      display: none;
+    }
+    .page-active {
+      display: block;
+    }
+  
+    .doc-card:hover{
+        border: 1.5px solid #FF5545 ; 
+        background-color: #eee;
+    }
+    #favo::after{
+          background-color: #FF5545;
+    }
+    .dropdownfilter{
+        border: 1px solid #fff ; 
+        width: 100%;
+    }
+    hr{
+        background-color: #000000;
+        margin-top: 0%;
+    }
+    .icons{
+        color: #FF5545 ;
+    }
+    
+  

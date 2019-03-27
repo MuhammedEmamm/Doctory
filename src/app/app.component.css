@@ -1,0 +1,331 @@
+@media screen and (max-width: 600px) {
+  #home {
+    background-image: url('../assets/images/hero-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1.4;
+    background-color: rgba(30, 27, 29, 0.9);
+    position: relative;
+    width: 100%;
+    padding: 1%;
+    padding-bottom: 2%;
+    margin-top: 70px;
+  }
+  .wrapper {
+    display: block;
+  }
+  #introheadline {
+    margin: 0 auto;
+    text-align: center;
+    padding: 7%;
+    color: #fff;
+    margin-top: 5%;
+  }
+  .dropdown {
+    background: #bbbbbbbb;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: #000;
+    padding: 3%;
+    margin-bottom: 2%;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #home {
+    background-image: url('../assets/images/hero-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1.4;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: relative;
+    width: 100%;
+    padding: 1%;
+    padding-bottom: 2%;
+  }
+  .wrapper {
+    display: block;
+  }
+  .intro {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  #introheadline {
+    margin: 0 auto;
+    text-align: center;
+    padding: 7%;
+    color: #fff;
+    margin-top: 5%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #home {
+    background-image: url('../assets/images/hero-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1.4;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: relative;
+    width: 100%;
+    padding: 1%;
+    padding-bottom: 2%;
+  }
+
+  .wrapper {
+    display: block;
+  }
+  .intro {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  #introheadline {
+    margin: 0 auto;
+    text-align: center;
+    padding: 7%;
+    color: #fff;
+  }
+  .dropdown {
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 3%;
+    margin-bottom: 2%;
+    width: 100%;
+    text-align: left;
+  }
+  
+}
+@media screen and (min-width: 992px) {
+  #home {
+    background-image: url('../assets/images/hero-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1.4;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: relative;
+    width: 100%;
+    padding: 1%;
+    padding-bottom: 2%;
+  }
+  .wrapper {
+    display: block;
+  }
+
+  .intro {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 5%;
+  }
+
+  #introheadline {
+    margin: 0 auto;
+    text-align: center;
+    padding: 7%;
+    color: #fff;
+  }
+  .dropdown {
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 3%;
+    margin-bottom: 2%;
+    width: 100%;
+    text-align: left;
+  }
+  
+}
+
+
+
+#navlinks {
+  border-right: 1px solid #FF5545;
+  color: white;
+}
+
+.homebuttons {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.radiogroup{
+  color : #fff ; 
+}
+
+
+.buttonsintro {
+  border-radius: 5px;
+  width: 100%;
+  color: #fff;
+  padding: 3%;
+  background-color: #FF5545;
+  border: 1px solid #FF5545 ;
+  cursor: pointer;
+}
+
+#introfooter {
+  margin: 2.4%;
+}
+
+#info {
+  text-align: center;
+}
+
+
+#downloadapphead {
+  text-align: center;
+  color: #FF5545;
+}
+
+#downloadappdesc {
+  text-align: center;
+  color: #000000;
+}
+
+#abouthead {
+  text-align: center;
+  color: #FF5545
+}
+
+#aboutcontent {
+  margin: 2%;
+  text-align: left;
+  color: #000000
+}
+
+#buttonheader {
+  border: 1px solid white;
+  border-radius: 15px;
+  background: transparent;
+  color: white;
+}
+
+h2 {
+  font-family: 'PT Sans', sans-serif;
+
+}
+
+#deschead {
+  color: #FF5545;
+
+}
+
+#desccontent {
+  text-align: left;
+  color: #000000;
+}
+
+.footer {
+  background-image: url('../assets/images/check-up-clinic-dentist-1170979.png');
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 1%;
+  padding-left: 5%;
+  padding-top: 5%;
+  padding-right: 5%;
+  width: 100%;
+}
+
+.headline {
+  color: #FF5545;
+  text-align: left;
+}
+
+#links {
+  color: #fff;
+}
+
+::placeholder {
+  color: #000000;
+}
+
+hr {
+  background-color: #bbbbbbbb
+}
+
+#input-form {
+  padding: 1%;
+  background-color: #bbbbbbbb;
+  border: 1px solid #bbbbbbbb;
+  border-radius: 5px 0px 0px 5px;
+
+}
+
+#button-form {
+  padding: 1%;
+  background-color: #FF5545;
+  border: 1px solid #FF5545;
+  border-radius: 0px 5px 5px 0px;
+  color: white
+}
+
+#footer-icon {
+  padding-right: 15%;
+}
+
+.navbar {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, .16), 0 0 0 0 rgba(0, 0, 0, .12);
+  font-weight: 0;
+}
+
+.mobile-view-list {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+input[type="radio"]{
+  background-color: #ddd;
+    background-image: -webkit-linear-gradient(0deg, transparent 20%, hsla(0,0%,100%,.7), transparent 80%),
+                      -webkit-linear-gradient(90deg, transparent 20%, hsla(0,0%,100%,.7), transparent 80%);
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.8),
+                0 0 0 1px hsla(0,0%,0%,.6),
+                0 2px 3px hsla(0,0%,0%,.6),
+                0 4px 3px hsla(0,0%,0%,.4),
+                0 6px 6px hsla(0,0%,0%,.2),
+                0 10px 6px hsla(0,0%,0%,.2);
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    margin-right: 10px;
+    position: relative;
+    width: 15px;
+    -webkit-appearance: none;
+}
+
+input[type="radio"]:after {
+  background-color: #fff;
+  border-radius: 25px;
+  /* box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.4),
+              0 1px 1px hsla(0,0%,100%,.8); */
+  content: '';
+  display: block;
+  height: 7px;
+  left: 4px;
+  position: relative;
+  top: 4px;
+  width: 7px;
+}
+input[type="radio"]:checked:after {
+  background-color: #f66;
+  box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.4),
+              inset 0 2px 2px hsla(0,0%,100%,.4),
+              0 1px 1px hsla(0,0%,100%,.8),
+              0 0 2px 2px hsla(0,70%,70%,.4);
+}

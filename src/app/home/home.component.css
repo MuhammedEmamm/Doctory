@@ -1,0 +1,200 @@
+.wrapper {
+  display: block;
+}
+
+#home {
+  background-image: url('../../assets/images/hero-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 1.4;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: relative;
+  width: 100%;
+  padding: 1%;
+  padding-bottom: 3%;
+}
+
+
+#desc {
+  background-color: #dddd;
+  width: 100%;
+  position: relative;
+  padding: 5%
+}
+
+#showreel {
+  background-image: url('../../assets/images/Layer1.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(231, 231, 231);
+  width: 100%;
+  position: relative;
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+
+#showreelvideo {
+  background-image: url('../../assets/images/Rectangle9.png');
+  background-size: 85% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+}
+
+#downloadapp {
+
+  background-image: url('../../assets/images/feedback-bg.png');
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: #ddd;
+  width: 100%;
+  position: relative;
+  padding-top: 8%;
+  padding-right: 4%;
+  /* padding-left: 4%; */
+  overflow: visible;
+}
+
+#about {
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  padding-top: 4%;
+  padding-bottom: 4%;
+
+}
+
+#showreelhead {
+  color: #FF5545;
+}
+
+#navlinks {
+  border-right: 1px solid #FF5545;
+  color: white;
+}
+
+.homebuttons {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+#introheadline {
+  margin: 0 auto;
+  text-align: center;
+  padding: 7%;
+  color: #fff;
+}
+
+.intro {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#dropdown {
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 3%;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 2%;
+}
+
+#buttonsintro {
+  border-radius: 5px;
+  width: 100%;
+  color: #fff;
+  padding: 3%;
+  background-color: #FF5545;
+  border: 1px solid #FF5545
+}
+
+#introfooter {
+  margin: 5%;
+}
+
+#info {
+  text-align: center;
+}
+
+
+#downloadapphead {
+  text-align: center;
+  color: #FF5545;
+  margin-top: 1%;
+}
+
+#downloadappdesc {
+  text-align: center;
+  color: #000000;
+}
+
+.abouthead {
+  text-align: center;
+  color: #FF5545
+}
+
+.aboutcontent {
+  margin: 2%;
+  text-align: left;
+  color: #000000
+}
+
+#buttonheader {
+  border: 1px solid white;
+  border-radius: 15px;
+  background: transparent;
+  color: white;
+}
+
+h2 {
+  font-family: 'PT Sans', sans-serif;
+
+}
+
+#deschead {
+  color: #FF5545;
+
+}
+
+#desccontent {
+  text-align: left;
+  color: #000000;
+}
+
+#footer {
+  background-image: url('../../assets/images/check-up-clinic-dentist-1170979.png');
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 1%;
+  padding-left: 5%;
+  padding-top: 5%;
+  padding-right: 5%;
+  width: 100%;
+}
+
+#headline {
+  color: #FF5545;
+}
+
+#links {
+  color: #fff;
+}
+
+::placeholder {
+  color: #000000;
+}
+
+hr {
+  background-color: #bbbbbbbb
+}
