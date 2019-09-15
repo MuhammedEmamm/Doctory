@@ -49,15 +49,15 @@
     $menu_show.on("click", function (e) {
         $menu.slideToggle();
     });
-    $list.on("click", function (e) {
-        var submenu = this.parentNode.getElementsByTagName("ul").item(0);
-        if (submenu != null) {
-            event.preventDefault();
-            console.log(submenu) ;
-           // $(submenu).slideToggle();
+    // $list.on("click", function (e) {
+    //     var submenu = this.parentNode.getElementsByTagName("ul").item(0);
+    //     if (submenu != null) {
+    //         event.preventDefault();
+    //         console.log(submenu) ;
+    //        // $(submenu).slideToggle();
 
-        }
-    });
+    //     }
+    // });
 
 
     

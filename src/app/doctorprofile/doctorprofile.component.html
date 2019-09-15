@@ -1,217 +1,532 @@
+<div class="page-loader-wrapper" id="page-loader">
+  <div class="loader">
+    <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/loading-icon.gif" width="200" height="200"
+        alt="Oreo">
+    </div>
+    <p>Please wait...</p>
+  </div>
+</div>
 <section id="doc-profile">
   <div class="row">
     <div class="col-lg-1"></div>
     <div class="col-lg-6 col-md-12 shadow" id="profile">
       <div class="mobile-view">
-          <div class="row ">
-              <div class="col-md-12">
-                <h3 class="text-center"><b id="docdesc">Doctor Name</b></h3>
-                <h6 class="text-center"><b id="docdesc">Specialty</b></h6>
-                <h6 class="text-center">
-                  <b id="docdesc">
-                    <i class="fas fa-star" id="docdesc"></i>
-                    <i class="fas fa-star" id="docdesc"></i>
-                    <i class="fas fa-star" id="docdesc"></i>
+        <div class="row ">
+          <div class="col-md-12">
+            <h2 class="text-center"><b class="docdesc">{{DocDetails.Name}}</b></h2>
+            <h5 class="text-center"><b class="docdesc">{{DocDetails.Specialities[0].name}}</b></h5>
+            <h6 class="text-center">
+              <b class="docdesc">
+                <!-- <i class="fas fa-star docdesc"></i>
+                    <i class="fas fa-star docdesc"></i>
+                    <i class="fas fa-star docdesc"></i>
                     <i class="far fa-star"></i>
-                    <i class="far fa-star" id="docdesc"></i>
-                  </b>
-                </h6>
+                    <i class="far fa-star docdesc"></i>
+                     -->
+              </b>
+
+            </h6>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-2 col-md-2" id="one">
+            <h6 class="text-center mobile firstpairs" style="color:#fff"><span id="data1">{{DocDetails.Email}}</span></h6>
+            <img src="assets/images/send message.png">
+
+
+          </div>
+          <div class="col-2 col-md-2" id="two">
+            <h6 class="text-center mobile twopairs" style="color:#fff ;"><span id="data2">Favourite</span></h6>
+
+            <img src="assets/images/favorite.png" *ngIf="!DocDetails.IsFav">
+            <img src="assets/images/favo2.png" *ngIf="DocDetails.IsFav">
+
+          </div>
+
+          <div class="col-4  col-md-4">
+            <h6 class="text-center">
+              <img class="rounded-circle doc-img" src="{{DocDetails.ImageUrl}}"
+                (error)="DocDetails.ImageUrl = 'assets/images/doctor.png'">
+            </h6>
+          </div>
+
+          <div class="col-2 col-md-2 " id="three">
+            <h6 class="text-center mobile twopairs" style="color:#fff ;"><span id="data3">{{DocDetails.ContactNumber}}</span></h6>
+
+            <img src="assets/images/call doctor.png">
+
+          </div>
+          <div class="col-2 col-md-2 " id="four">
+            <h6 class="text-center mobile firstpairs" style="color:#fff ;"><span id="data4">Share</span></h6>
+
+            <img src="assets/images/share doctor.png">
+
+          </div>
+
+        </div>
+
+        <div class="row" id="profile-content">
+
+
+          <div class="col-md-10 offset-md-1 d-none d-md-block" id="mapdiv">
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="padding:1%">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <agm-map [latitude]="Lat" [longitude]="Long" [zoom]="9">
+                    <agm-marker [latitude]="Lat" [longitude]="Long"></agm-marker>
+                  </agm-map>
+                  <div class="col-md-12" id="mapdesc">
+                    <h3 class="text-center doccontent">{{DocDetails.FacilityName}}</h3>
+                    <h6 class="text-center">{{DocDetails.Address}}</h6>
+                  </div>
+
+                </div>
               </div>
             </div>
-      
-            <div class="row">
-              <div class="col-2 col-md-2">
-                <h6 class="text-center mobile" id="firstpairs" style="color:#fff">Message</h6>
-                <img src="assets/images/send message.png">
 
-      
-              </div>
-              <div class="col-2 col-md-2">
-                <h6 class="text-center mobile" id="twopairs" style="color:#fff ;">Favourite</h6>
-      
-                <img src="assets/images/favorite.png">
-
-              </div>
-      
-              <div class="col-4  col-md-4">
-                <h6 class="text-center">
-                  <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h6>
-              </div>
-      
-              <div class="col-2 col-md-2 ">
-                <h6 class="text-center mobile" id="twopairs" style="color:#fff ;">0123456789</h6>
-      
-                <img src="assets/images/call doctor.png">
-
-              </div>
-              <div class="col-2 col-md-2 ">
-                <h6 class="text-center mobile" id="firstpairs" style="color:#fff ;">Share</h6>
-      
-                <img src="assets/images/share doctor.png">
-
-              </div>
-      
-            </div>
-      
-            <div class="row" id="profile-content">
-              <div class="col-md-12">
-                <h6 class="text-center" id="doccontent">192 reviews</h6>
-              </div>
-      
-              <div class="col-md-10 offset-md-1 d-none d-md-block" id="mapdiv">
-      
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="padding:1%">
-                  <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" id="mapslider"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1" id="mapslider"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2" id="mapslider"></li>
-                  </ol>
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                      <div class="col-md-12" id="mapdesc">
-                        <h3 class="text-center" id="doccontent">clinic 1</h3>
-                        <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                      </div>
-      
-                    </div>
-                    <div class="carousel-item ">
-                      <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                      <div class="col-md-12" id="mapdesc">
-                        <h3 class="text-center" id="doccontent">clinic 2</h3>
-                        <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                      </div>
-      
-                    </div>
-                    <div class="carousel-item ">
-                      <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                      <div class="col-md-12" id="mapdesc">
-                        <h3 class="text-center" id="doccontent">clinic 3</h3>
-                        <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                      </div>
-      
-                    </div>
+          </div>
+          <div class="col-10  offset-1 d-block d-md-none" id="mapdiv">
+            <div class="swiper-container">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <agm-map [latitude]="Lat" [longitude]="Long" [zoom]="11">
+                    <agm-marker [latitude]="Lat" [longitude]="Long"></agm-marker>
+                  </agm-map>
+                  <div class="col-md-12" id="mapdesc">
+                    <h3 class="text-center doccontent">{{DocDetails.FacilityName}}</h3>
+                    <h6 class="text-center">{{DocDetails.Address}}</h6>
                   </div>
                 </div>
-      
+
               </div>
-              <div class="col-10  offset-1 d-block d-md-none" id="mapdiv">
-                  <div class="swiper-container">
-                      <!-- Additional required wrapper -->
-                      <div class="swiper-wrapper">
-                          <!-- Slides -->
-                          <div class="swiper-slide">
-                              <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                              frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius:5px"></iframe>
-                            <div class="col-md-12" id="mapdesc">
-                              <h3 class="text-center" id="doccontent">clinic 1</h3>
-                              <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                            </div>
-                          </div>
-                          <div class="swiper-slide">
-                              <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                              frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius:5px"></iframe>
-                            <div class="col-md-12" id="mapdesc">
-                              <h3 class="text-center" id="doccontent">clinic 1</h3>
-                              <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                            </div>
-                          </div>
-                          <div class="swiper-slide">
-                              <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                              frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius:5px"></iframe>
-                            <div class="col-md-12" id="mapdesc">
-                              <h3 class="text-center" id="doccontent">clinic 1</h3>
-                              <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                            </div>
-                          </div>
-                          
-                      </div>
-                      <!-- If we need pagination -->
-                      <div class="swiper-pagination"></div>
-                  
-                      
-                  </div>
-                 
-        
-                </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+
             </div>
 
-            
+
+          </div>
+        </div>
+
+
       </div>
       <a class="d-block d-sm-none" data-target="#Request" data-toggle="modal">
-          <button id="buttonsintro">Request Appointment</button>
+        <button class="buttonsintro">Request Appointment</button>
       </a>
     </div>
 
-    <div class="col-lg-4 col-md-12 d-none d-sm-block">
-      <div class="card-header text-center" id="doclist-head">Request Appointment</div>
-      <div class="card mb-3" style="height:600px ; border-radius:  0 0 5px 5px">
-        <div class="card-body">
-          <form>
+    <div class="col-lg-4 col-md-12 d-none d-sm-block" *ngIf="DocDetails.DoctorTypeId != '2'">
+      <div class="card-header text-center doclist-head">Request Appointment</div>
+      <div class="card-header text-center d-none d-sm-block schedule-head"
+        *ngIf=" DocDetails.DoctorTypeId == '3' && !SlotID">
+        <div class="row">
+
+          <div class="col-12 col-md-12">
             <div class="row">
-              <h5 id="doccontent">&nbsp;&nbsp;<u>Patient Information</u> </h5>
-              <br>
-              <br>
+              <div class="col-1 col-lg-2 col-md-2">
+                <!-- <a class="carousel-control-prev" (click)="slidecalendarprev()" role="button" id="sliderbtn">
+                  <i class="fas fa-arrow-left fa-lg"></i>
+                </a> -->
+              </div>
+              <div class="col-10 col-lg-8 col-md-8">
+                <div class="d-block w-100" style="width:100%">
+                  <div class="row">
+                    <div class="col-4 col-md-4 ">
+                      <h5 style="color : #FF5545">{{Months[monthindex].Day}}</h5>
+                      <h5 style="color : #FF5545">{{Months[monthindex].Date}}</h5>
 
+
+                    </div>
+                    <div class="col-4 col-md-4 ">
+                      <h5 style="color : #FF5545">{{Months[monthindex+1].Day}}</h5>
+                      <h5 style="color : #FF5545">{{Months[monthindex+1].Date}}</h5>
+
+                    </div>
+                    <div class="col-4 col-md-4 ">
+                      <h5 style="color : #FF5545">{{Months[monthindex+2].Day}}</h5>
+                      <h5 style="color : #FF5545">{{Months[monthindex+2].Date}}</h5>
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-1 col-lg-2 col-md-2">
+                <!-- <a class="carousel-control-next" (click)="slidecalendarnext()" role="button" id="sliderbtn">
+                  <i class="fas fa-arrow-right fa-lg"></i>
+                </a> -->
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card mb-3" style="min-height:600px ; border-radius:  0 0 5px 5px">
+        <div class="card-body">
+          <form [formGroup]="RequestAppForm" (ngSubmit)="RequestApp()" *ngIf="DocDetails.DoctorTypeId == '1'">
+            <div class="row">
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Patient Information</u> </h5>
+              <br>
               <div class="col-md-12">
-                <select id="dropdownform">
-                  <option value="" disabled selected>Patient Name</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
+                <select class="dropdownform" formControlName="PatientId"
+                  [ngClass]="{ 'is-invalid': submitted && f.PatientId.errors }" (change)="GetMobCpr(PP)"
+                  [(ngModel)]="PP">
+                  <option [value]="UserID">Me</option>
+                  <option [value]="mem.FamilyMemberId" *ngFor="let mem of AllMembers">{{mem.Name}}</option>
                 </select>
 
-                <p class="pull-right" id="doccontent"><u>New Patient</u></p>
-              </div>
-              <div class="col-md-12">
-                <input id="inputform" placeholder="Mobile Number">
-                <p class="pull-right" id="doccontent"><u>Change Mobile Number</u></p>
-              </div>
+                <p class="pull-right doccontent"><u><a class="doccontent" routerLink="/family-members">New
+                      Patient</a></u></p>
 
-              <h5 id="doccontent">&nbsp;&nbsp;<u>Facility Information</u> </h5>
+                <div *ngIf="submitted && f.PatientId.errors" class="invalid-feedback">
+                  <div *ngIf="f.PatientId.errors.required"> Patient is required</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Mobile Number" formControlName="ContactNumber"
+                  [ngClass]="{ 'is-invalid': submitted && f.ContactNumber.errors }">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted && f.ContactNumber.errors" class="invalid-feedback">
+                  <div *ngIf="f.ContactNumber.errors.required"> Phone Number is required</div>
+                </div>
+              </div>
               <br>
               <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Cpr Number" formControlName="CPRNumber"
+                  [ngClass]="{ 'is-invalid': submitted && f.CPRNumber.errors }" [readonly]="isReadOnly">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted && f.CPRNumber.errors" class="invalid-feedback">
+                  <div *ngIf="f.CPRNumber.errors.required"> CPRNumber is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Promo Code" formControlName="PromoCode"
+                  [ngClass]="{ 'is-invalid': submitted && f.PromoCode.errors }">
 
+              </div>
+              <br>
+              <br>
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Facility Information</u> </h5>
+              <br>
+              <br>
               <div class="col-md-12">
-                <input id="inputform" placeholder="Required Date">
+                <input class="inputform" placeholder="Required Date" type="date" formControlName="DateTime"
+                  [ngClass]="{ 'is-invalid': submitted && f.DateTime.errors }">
+                <div *ngIf="submitted && f.DateTime.errors" class="invalid-feedback">
+                  <div *ngIf="f.DateTime.errors.required"> DateTime is required</div>
+                </div>
               </div>
               <br>
               <br>
               <br>
               <div class="col-md-12">
-                <input id="inputform" placeholder="Preferred Time">
+                <input class="inputform" placeholder="Preferred Time" type="time" formControlName="Time"
+                  [ngClass]="{ 'is-invalid': submitted && f.Time.errors }">
+                <div *ngIf="submitted && f.Time.errors" class="invalid-feedback">
+                  <div *ngIf="f.Time.errors.required"> Time is required</div>
+                </div>
               </div>
               <br>
               <br>
               <br>
               <div class="col-md-12">
-                <select id="dropdownform">
+                <select class="dropdownform" formControlName="RequestType"
+                  [ngClass]="{ 'is-invalid': submitted && f.RequestType.errors }">
                   <option value="" disabled selected>Visit Type</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
+                  <option value="2">Follow Up</option>
+                  <option value="1">First Time</option>
                 </select>
-              </div>
-              <br>
-              <br>
-              <br>
-              <div class="col-md-12">
-                <select id="dropdownform">
-                  <option value="" disabled selected>Visit Reason</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
+                <div *ngIf="submitted && f.RequestType.errors" class="invalid-feedback">
+                  <div *ngIf="f.RequestType.errors.required"> Visit Type is required</div>
+                </div>
               </div>
               <br>
               <br>
               <br>
             </div>
-            <button id="buttonsintro">Request Appointment</button>
+            <button class="buttonsintro" type="submit" *ngIf="!Loading1">Request Appointment</button>
+            <h5 class="text-center">
+              <img src="assets/images/loading-icon.gif" id="loading">
+
+            </h5>
+          </form>
+
+          <form [formGroup]="RequestAppSchForm" (ngSubmit)="RequestAppSch()"
+            *ngIf=" DocDetails.DoctorTypeId == '3' && SlotID">
+            <div class="row">
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Patient Information</u> </h5>
+              <br>
+              <br>
+              <br>
+
+              <div class="col-md-12">
+                <select class="dropdownform" formControlName="PatientId"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.PatientId.errors }" (change)="GetMobCpr(PP)"
+                  [(ngModel)]="PP">
+                  <option [value]="UserID">Me</option>
+                  <option [value]="mem.FamilyMemberId" *ngFor="let mem of AllMembers">{{mem.Name}}</option>
+                </select>
+
+                <p class="pull-right doccontent"><u><a class="doccontent" routerLink="/family-members">New
+                      Patient</a></u></p>
+
+                <div *ngIf="submitted2 && s.PatientId.errors" class="invalid-feedback">
+                  <div *ngIf="s.PatientId.errors.required"> Patient is required</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Mobile Number" formControlName="ContactNumber"
+                  [ngClass]="{ 'is-invalid': submitted && s.ContactNumber.errors }">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted2 && f.ContactNumber.errors" class="invalid-feedback">
+                  <div *ngIf="s.ContactNumber.errors.required"> Phone Number is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Cpr Number" formControlName="CPRNumber"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.CPRNumber.errors }" [readonly]="isReadOnly">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted2 && s.CPRNumber.errors" class="invalid-feedback">
+                  <div *ngIf="s.CPRNumber.errors.required"> CPRNumber is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Promo Code" formControlName="PromoCode"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.PromoCode.errors }">
+
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Date" formControlName="Date"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.Date.errors }" readonly>
+
+              </div>
+              <br>
+              <br>
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Facility Information</u> </h5>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <select class="dropdownform" formControlName="RequestType"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.RequestType.errors }">
+                  <option value="" disabled selected>Visit Type</option>
+                  <option value="2">Follow Up</option>
+                  <option value="1">First Time</option>
+                </select>
+                <div *ngIf="submitted2 && s.RequestType.errors" class="invalid-feedback">
+                  <div *ngIf="s.RequestType.errors.required"> Visit Type is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+            </div>
+            <button class="buttonsintro" type="submit" *ngIf="!Loading2">Request Appointment</button>
+            <h5 class="text-center">
+              <img src="assets/images/loading-icon.gif" id="loading">
+
+            </h5>
+          </form>
+
+          <form [formGroup]="RequestAppSchForm" (ngSubmit)="RequestAppSch()"
+            *ngIf=" DocDetails.DoctorTypeId == '3' && !SlotID">
+            <div class="row">
+              <div class="col-12 d-none d-sm-block schedule">
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-8 col-md-10">
+                    <div class="carousel-inner" style="height:100%">
+
+                      <div class="carousel-item active">
+                        <div class="d-block w-100" style="width:100%">
+                          <div class="row">
+                            <div class="col-4 col-md-4 ">
+                              <div class="headcard" style="width:100%">
+                                <a id="Slot{{slot.SlotId}}" (click)="ChooseSlot(slot.SlotId)" *ngFor="let slot of DocDetails.GetDoctorSlots">
+                                  <div class="headinfo"
+                                    *ngIf="slot.Date.substring(0,4) == SlotDate.getFullYear() && slot.Date.substring(6,7) == (SlotDate.getMonth()+1) &&  slot.Date.substring(8,10) == SlotDate.getDate()">
+                                    {{slot.From.substring(11,16)}}
+                                  </div>
+                                </a>
+
+                              </div>
+
+
+                            </div>
+
+                            <div class="col-4 col-md-4 ">
+                              <div class="headcard" style="width:100%">
+                                <a id="Slot{{slot.SlotId}}" (click)="ChooseSlot(slot.SlotId)" *ngFor="let slot of DocDetails.GetDoctorSlots">
+                                  <div class="headinfo"
+                                    *ngIf="slot.Date.substring(0,4) == SlotDate2.getFullYear() && slot.Date.substring(6,7) == (SlotDate2.getMonth()+1) &&  slot.Date.substring(8,10) == SlotDate2.getDate()">
+                                    {{slot.From.substring(11,16)}}</div>
+                                </a>
+                              </div>
+
+
+                            </div>
+
+                            <div class="col-4 col-md-4 ">
+                              <div class="headcard" style="width:100%">
+                                <a id="Slot{{slot.SlotId}}" (click)="ChooseSlot(slot.SlotId)" *ngFor="let slot of DocDetails.GetDoctorSlots">
+                                  <div class="headinfo"
+                                    *ngIf="slot.Date.substring(0,4) == SlotDate3.getFullYear() && slot.Date.substring(6,7) == (SlotDate3.getMonth()+1) &&  slot.Date.substring(8,10) == SlotDate3.getDate()">
+                                    {{slot.From.substring(11,16)}}</div>
+                                </a>
+                              </div>
+
+
+                            </div>
+
+                          </div>
+                        </div>
+
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+                <button class="buttonsintro" *ngIf="!DocDetails.GetDoctorSlots.length">
+                  <h5 class="text-center">
+                    No Slots on that days.
+                  </h5>
+                </button>
+              </div>
+
+              <div class="col-12 d-block d-sm-none schedule">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="d-block w-100">
+                      <div class="row">
+                        <div class="col-12 col-md-4 ">
+                          <div class="headcard">
+                            <a id="Slot{{slot.SlotId}}" (click)="ChooseSlot(slot.SlotId)" *ngFor="let slot of DocDetails.GetDoctorSlots">
+                              <div class="headinfo"
+                                *ngIf="slot.Date.substring(0,4) == SlotDate.getFullYear() && slot.Date.substring(6,7) == (SlotDate.getMonth()+1) &&  slot.Date.substring(8,10) == SlotDate.getDate()">
+                                {{slot.From.substring(11,16)}}</div>
+                            </a>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Patient Information</u> </h5>
+              <br>
+              <br>
+              <br>
+
+              <div class="col-md-12">
+                <select class="dropdownform" formControlName="PatientId"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.PatientId.errors }" (change)="GetMobCpr(PP)"
+                  [(ngModel)]="PP">
+                  <option [value]="UserID">Me</option>
+                  <option [value]="mem.FamilyMemberId" *ngFor="let mem of AllMembers">{{mem.Name}}</option>
+                </select>
+
+                <p class="pull-right doccontent"><u><a class="doccontent" routerLink="/family-members">New
+                      Patient</a></u></p>
+
+                <div *ngIf="submitted2 && s.PatientId.errors" class="invalid-feedback">
+                  <div *ngIf="s.PatientId.errors.required"> Patient is required</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Mobile Number" formControlName="ContactNumber"
+                  [ngClass]="{ 'is-invalid': submitted && s.ContactNumber.errors }">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted2 && f.ContactNumber.errors" class="invalid-feedback">
+                  <div *ngIf="s.ContactNumber.errors.required"> Phone Number is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Cpr Number" formControlName="CPRNumber"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.CPRNumber.errors }" [readonly]="isReadOnly">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted2 && s.CPRNumber.errors" class="invalid-feedback">
+                  <div *ngIf="s.CPRNumber.errors.required"> CPRNumber is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Promo Code" formControlName="PromoCode"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.PromoCode.errors }">
+
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Date" formControlName="Date"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.Date.errors }" readonly>
+
+              </div>
+              <br>
+              <br>
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Facility Information</u> </h5>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <select class="dropdownform" formControlName="RequestType"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.RequestType.errors }">
+                  <option value="" disabled selected>Visit Type</option>
+                  <option value="2">Follow Up</option>
+                  <option value="1">First Time</option>
+                </select>
+                <div *ngIf="submitted2 && s.RequestType.errors" class="invalid-feedback">
+                  <div *ngIf="s.RequestType.errors.required"> Visit Type is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+            </div>
+            <button class="buttonsintro" type="submit" *ngIf="!Loading2">Request Appointment</button>
+            <h5 class="text-center">
+              <img src="assets/images/loading-icon.gif" id="loading">
+
+            </h5>
           </form>
 
 
@@ -223,419 +538,379 @@
 
   </div>
   <br>
-  
+
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10 shadow" id="doc-tabs">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
 
-        <li class="nav-item col-4 col-md-4" style="border-right:2px solid #bbbbbbbb">
+        <li class="nav-item col-6 col-md-6" style="border-right:2px solid #bbbbbbbb">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#hom" role="tab" aria-controls="home"
             aria-selected="true">
             <p class="text-center tab-title"><b>Profile</b></p>
           </a>
         </li>
-        <li class="nav-item col-4 col-md-4" style="border-right:2px solid #bbbbbbbb">
+        <li class="nav-item col-6 col-md-6">
           <a class="nav-link" id="profile-tab" data-toggle="tab" href="#clinic" role="tab" aria-controls="clinic"
             aria-selected="false">
             <p class="text-center tab-title"><b>Clinic Info</b></p>
           </a>
         </li>
-        <li class="nav-item col-4 col-md-4">
+        <!-- <li class="nav-item col-4 col-md-4">
           <a class="nav-link" id="contact-tab" data-toggle="tab" href="#rating" role="tab" aria-controls="rating"
             aria-selected="false">
             <p class="text-center tab-title"><b>Rating</b></p>
           </a>
-        </li>
+        </li> -->
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-tab">
           <div id="doctabcontent">
-            <div id="prostate">
-              <h5 id="doccontent"><b>Professional Statement</b></h5>
-              <p>
-                Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
-                synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
-                butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-                squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher
-                voluptate nisi qui
-              </p>
-              <ul class="list-unstyled">
-                <li>denim</li>
-                <li>Raw</li>
-                <li>denim</li>
-                <li>Raw</li>
-                <li>denim</li>
-                <li>Raw</li>
-                <li>denim</li>
-                <li>Raw</li>
-                <li>denim</li>
-                <li>Raw</li>
-              </ul>
-            </div>
-
-            <div id="certs">
-              <h5 id="doccontent"><b>Certifications</b></h5>
-              <h6>
-                1-denim
-              </h6>
-              <h6>
-                2-Raw
-              </h6>
-              <h6>
-                3-denim
-              </h6>
-              <h6>
-                4-Raw
-              </h6>
-
-            </div>
-
-            <div id="prostate">
-              <h5 id="doccontent"><b>Experience</b></h5>
-              <p>
-                Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
-                synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
-                butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-                squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher
-                voluptate nisi qui
-              </p>
+            <div id="prostate" innerHTML={{DocDetails.Info}}>
 
             </div>
 
           </div>
         </div>
-        <div class="tab-pane fade" id="clinic" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie locavore,
-          accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial
-          PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth
-          letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud
-          organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit
-          sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut
-          DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui
-          sapiente accusamus tattooed echo park.</div>
-        <div class="tab-pane fade" id="rating" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape wayfarers,
+        <div class="tab-pane fade" id="clinic" role="tabpanel" aria-labelledby="profile-tab">
+          <div id="prostate" innerHTML={{DocDetails.ClinicInfo}}>
+
+          </div>
+        </div>
+        <!-- <div class="tab-pane fade" id="rating" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape wayfarers,
           ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table
           readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy
           salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.
           Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog.
           Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable
-          tofu synth chambray yr.</div>
+          tofu synth chambray yr.</div> -->
       </div>
 
     </div>
   </div>
-
-  <!-- <div class="row">
-
-    <div class="col-md-1"></div>
-    <div class="col-md-10 shadow" id="our-team">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 id="doccontent" class="text-center"><i class="fas fa-user-md fa-lg"></i></h1>
-          <h3 id="doccontent" class="text-center"><b>Related Doctors</b></h3>
-          <h4 class="text-center"><img src="assets/images/linecopy2.png"></h4>
-        </div>
-      </div>
-      <br>
-      <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="../../assets/images/02_doctor_Insider-Tips-to-Choosing-the-Best-Primary-Care-Doctor_519507367_Stokkete.png">
-                    <div class="team-content">
-                      <h3 class="title">Williamson</h3>
-                      <span class="post">Sepcialty</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="assets/images/male-dentist_4460x4460.png">
-                    <div class="team-content">
-                      <h3 class="title">kristina</h3>
-                      <span class="post">Web Designer</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="assets/images/The-Dedicated-Doctor.png">
-                    <div class="team-content">
-                      <h3 class="title">kristina</h3>
-                      <span class="post">Web Designer</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="assets/images/Medical_Professional_stock.png">
-                    <div class="team-content">
-                      <h3 class="title">kristina</h3>
-                      <span class="post">Web Designer</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-          <div class="carousel-item">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="../../assets/images/02_doctor_Insider-Tips-to-Choosing-the-Best-Primary-Care-Doctor_519507367_Stokkete.png">
-                    <div class="team-content">
-                      <h3 class="title">Williamson</h3>
-                      <span class="post">Sepcialty</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="assets/images/male-dentist_4460x4460.png">
-                    <div class="team-content">
-                      <h3 class="title">kristina</h3>
-                      <span class="post">Web Designer</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="assets/images/The-Dedicated-Doctor.png">
-                    <div class="team-content">
-                      <h3 class="title">kristina</h3>
-                      <span class="post">Web Designer</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="assets/images/Medical_Professional_stock.png">
-                    <div class="team-content">
-                      <h3 class="title">kristina</h3>
-                      <span class="post">Web Designer</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-          <div class="carousel-item">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="../../assets/images/02_doctor_Insider-Tips-to-Choosing-the-Best-Primary-Care-Doctor_519507367_Stokkete.png">
-                    <div class="team-content">
-                      <h3 class="title">Williamson</h3>
-                      <span class="post">Sepcialty</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="assets/images/male-dentist_4460x4460.png">
-                    <div class="team-content">
-                      <h3 class="title">kristina</h3>
-                      <span class="post">Web Designer</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="assets/images/The-Dedicated-Doctor.png">
-                    <div class="team-content">
-                      <h3 class="title">kristina</h3>
-                      <span class="post">Web Designer</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="our-team">
-                    <img src="assets/images/Medical_Professional_stock.png">
-                    <div class="team-content">
-                      <h3 class="title">kristina</h3>
-                      <span class="post">Web Designer</span>
-                      <ul class="icon">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-        <a class="carousel-control-prev" style="margin-left:-8%" data-target="#carouselExampleIndicators1" role="button"
-          data-slide="prev" id="sliderbtn">
-          <i class="fas fa-caret-left fa-lg"></i>
-        </a>
-        <a class="carousel-control-next" style="margin-right:-8%" data-target="#carouselExampleIndicators1" role="button"
-          data-slide="next" id="sliderbtn">
-          <i class="fas fa-caret-right fa-lg"></i>
-        </a>
-      </div>
-
-    </div>
-  </div>
- -->
 
 </section>
 
 <!-- Modal -->
 <div class="modal fade" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Request Appointment</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="card-body">
-                <form>
-                  <div class="row">
-                    <h5 id="doccontent">&nbsp;&nbsp;<u>Patient Information</u> </h5>
-                    <br>
-                    <br>
-      
-                    <div class="col-md-12">
-                      <select id="dropdownform">
-                        <option value="" disabled selected>Patient Name</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                      </select>
-      
-                      <p class="pull-right" id="doccontent"><u>New Patient</u></p>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Request Appointment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="card-header text-center d-block d-sm-none schedule-head"
+          *ngIf=" DocDetails.DoctorTypeId == '3' && !SlotID">
+          <div class="row">
+
+            <div class="col-12 col-md-12">
+              <div class="row">
+                <div class="col-2 col-md-1">
+                  <!-- <a class="carousel-control-prev" (click)="slidecalendarprevmob()" role="button" id="sliderbtn">
+                    <i class="fas fa-arrow-left fa-lg"></i>
+                  </a> -->
+                </div>
+                <div class="col-8 col-md-10">
+                  <div class="d-block w-100" style="width:100%">
+                    <div class="row">
+                      <div class="col-12 col-md-12 ">
+                        <h5 style="color : #FF5545">{{Monthsmob[monthindexmob].Day}}</h5>
+                        <h5 style="color : #FF5545">{{Monthsmob[monthindexmob].Date}}</h5>
+                      </div>
+
+
                     </div>
-                    <div class="col-md-12">
-                      <input id="inputform" placeholder="Mobile Number">
-                      <p class="pull-right" id="doccontent"><u>Change Mobile Number</u></p>
-                    </div>
-      
-                    <h5 id="doccontent">&nbsp;&nbsp;<u>Facility Information</u> </h5>
-                    <br>
-                    <br>
-      
-                    <div class="col-md-12">
-                      <input id="inputform" placeholder="Required Date">
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="col-md-12">
-                      <input id="inputform" placeholder="Preferred Time">
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="col-md-12">
-                      <select id="dropdownform">
-                        <option value="" disabled selected>Visit Type</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                      </select>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="col-md-12">
-                      <select id="dropdownform">
-                        <option value="" disabled selected>Visit Reason</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                      </select>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
                   </div>
-                  <button id="buttonsintro">Request Appointment</button>
-                </form>
-      
-      
+                </div>
+                <div class="col-2 col-md-1">
+                  <!-- <a class="carousel-control-next" (click)="slidecalendarnextmob()" role="button" id="sliderbtn">
+                    <i class="fas fa-arrow-right fa-lg"></i>
+                  </a> -->
+                </div>
+
               </div>
-              
+            </div>
+
+          </div>
+
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+        <div class="card-body">
+          <form [formGroup]="RequestAppForm" (ngSubmit)="RequestApp()" *ngIf="DocDetails.DoctorTypeId == '1'">
+            <div class="row">
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Patient Information</u> </h5>
+              <br>
+              <div class="col-md-12">
+                <select class="dropdownform" formControlName="PatientId"
+                  [ngClass]="{ 'is-invalid': submitted && f.PatientId.errors }" (change)="GetMobCpr(PP)"
+                  [(ngModel)]="PP">
+                  <option [value]="UserID">Me</option>
+                  <option [value]="mem.FamilyMemberId" *ngFor="let mem of AllMembers">{{mem.Name}}</option>
+                </select>
+
+                <p class="pull-right doccontent"><u><a class="doccontent" routerLink="/family-members">New
+                      Patient</a></u></p>
+
+                <div *ngIf="submitted && f.PatientId.errors" class="invalid-feedback">
+                  <div *ngIf="f.PatientId.errors.required"> Patient is required</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Mobile Number" formControlName="ContactNumber"
+                  [ngClass]="{ 'is-invalid': submitted && f.ContactNumber.errors }">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted && f.ContactNumber.errors" class="invalid-feedback">
+                  <div *ngIf="f.ContactNumber.errors.required"> Phone Number is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Cpr Number" formControlName="CPRNumber"
+                  [ngClass]="{ 'is-invalid': submitted && f.CPRNumber.errors }" [readonly]="isReadOnly">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted && f.CPRNumber.errors" class="invalid-feedback">
+                  <div *ngIf="f.CPRNumber.errors.required"> CPRNumber is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Promo Code" formControlName="PromoCode"
+                  [ngClass]="{ 'is-invalid': submitted && f.PromoCode.errors }">
+
+              </div>
+              <br>
+              <br>
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Facility Information</u> </h5>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Required Date" type="date" formControlName="DateTime"
+                  [ngClass]="{ 'is-invalid': submitted && f.DateTime.errors }">
+                <div *ngIf="submitted && f.DateTime.errors" class="invalid-feedback">
+                  <div *ngIf="f.DateTime.errors.required"> DateTime is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Preferred Time" type="time" formControlName="Time"
+                  [ngClass]="{ 'is-invalid': submitted && f.Time.errors }">
+                <div *ngIf="submitted && f.Time.errors" class="invalid-feedback">
+                  <div *ngIf="f.Time.errors.required"> Time is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <select class="dropdownform" formControlName="RequestType"
+                  [ngClass]="{ 'is-invalid': submitted && f.RequestType.errors }">
+                  <option value="" disabled selected>Visit Type</option>
+                  <option value="2">Follow Up</option>
+                  <option value="1">First Time</option>
+                </select>
+                <div *ngIf="submitted && f.RequestType.errors" class="invalid-feedback">
+                  <div *ngIf="f.RequestType.errors.required"> Visit Type is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+            </div>
+            <button class="buttonsintro" type="submit" *ngIf="!Loading1">Request Appointment</button>
+            <h5 class="text-center">
+              <img src="assets/images/loading-icon.gif" id="loading">
+
+            </h5>
+          </form>
+
+          <form [formGroup]="RequestAppSchForm" (ngSubmit)="RequestAppSch()"
+            *ngIf=" DocDetails.DoctorTypeId == '3' && SlotID">
+            <div class="row">
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Patient Information</u> </h5>
+              <br>
+              <br>
+              <br>
+
+              <div class="col-md-12">
+                <select class="dropdownform" formControlName="PatientId"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.PatientId.errors }" (change)="GetMobCpr(PP)"
+                  [(ngModel)]="PP">
+                  <option [value]="UserID">Me</option>
+                  <option [value]="mem.FamilyMemberId" *ngFor="let mem of AllMembers">{{mem.Name}}</option>
+                </select>
+
+                <p class="pull-right doccontent"><u><a class="doccontent" routerLink="/family-members">New
+                      Patient</a></u></p>
+
+                <div *ngIf="submitted2 && s.PatientId.errors" class="invalid-feedback">
+                  <div *ngIf="s.PatientId.errors.required"> Patient is required</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Mobile Number" formControlName="ContactNumber"
+                  [ngClass]="{ 'is-invalid': submitted && s.ContactNumber.errors }">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted2 && f.ContactNumber.errors" class="invalid-feedback">
+                  <div *ngIf="s.ContactNumber.errors.required"> Phone Number is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Cpr Number" formControlName="CPRNumber"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.CPRNumber.errors }" [readonly]="isReadOnly">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted2 && s.CPRNumber.errors" class="invalid-feedback">
+                  <div *ngIf="s.CPRNumber.errors.required"> CPRNumber is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Promo Code" formControlName="PromoCode"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.PromoCode.errors }">
+
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Date" formControlName="Date"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.Date.errors }" readonly>
+
+              </div>
+              <br>
+              <br>
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Facility Information</u> </h5>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <select class="dropdownform" formControlName="RequestType"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.RequestType.errors }">
+                  <option value="" disabled selected>Visit Type</option>
+                  <option value="2">Follow Up</option>
+                  <option value="1">First Time</option>
+                </select>
+                <div *ngIf="submitted2 && s.RequestType.errors" class="invalid-feedback">
+                  <div *ngIf="s.RequestType.errors.required"> Visit Type is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+            </div>
+            <button class="buttonsintro" type="submit" *ngIf="!Loading2">Request Appointment</button>
+            <h5 class="text-center">
+              <img src="assets/images/loading-icon.gif" id="loading">
+
+            </h5>
+          </form>
+
+          <form [formGroup]="RequestAppSchForm" (ngSubmit)="RequestAppSch()"
+            *ngIf=" DocDetails.DoctorTypeId == '3' && !SlotID">
+            <div class="row">
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Patient Information</u> </h5>
+              <br>
+              <br>
+              <br>
+
+              <div class="col-md-12">
+                <select class="dropdownform" formControlName="PatientId"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.PatientId.errors }" (change)="GetMobCpr(PP)"
+                  [(ngModel)]="PP">
+                  <option [value]="UserID">Me</option>
+                  <option [value]="mem.FamilyMemberId" *ngFor="let mem of AllMembers">{{mem.Name}}</option>
+                </select>
+
+                <p class="pull-right doccontent"><u><a class="doccontent" routerLink="/family-members">New
+                      Patient</a></u></p>
+
+                <div *ngIf="submitted2 && s.PatientId.errors" class="invalid-feedback">
+                  <div *ngIf="s.PatientId.errors.required"> Patient is required</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Mobile Number" formControlName="ContactNumber"
+                  [ngClass]="{ 'is-invalid': submitted && s.ContactNumber.errors }">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted2 && f.ContactNumber.errors" class="invalid-feedback">
+                  <div *ngIf="s.ContactNumber.errors.required"> Phone Number is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Cpr Number" formControlName="CPRNumber"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.CPRNumber.errors }" [readonly]="isReadOnly">
+                <!-- <p class="pull-right doccontent"><u>Change Mobile Number</u></p> -->
+                <div *ngIf="submitted2 && s.CPRNumber.errors" class="invalid-feedback">
+                  <div *ngIf="s.CPRNumber.errors.required"> CPRNumber is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Promo Code" formControlName="PromoCode"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.PromoCode.errors }">
+
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <input class="inputform" placeholder="Date" formControlName="Date"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.Date.errors }" readonly>
+
+              </div>
+              <br>
+              <br>
+              <h5 class="doccontent">&nbsp;&nbsp;<u>Facility Information</u> </h5>
+              <br>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <select class="dropdownform" formControlName="RequestType"
+                  [ngClass]="{ 'is-invalid': submitted2 && s.RequestType.errors }">
+                  <option value="" disabled selected>Visit Type</option>
+                  <option value="2">Follow Up</option>
+                  <option value="1">First Time</option>
+                </select>
+                <div *ngIf="submitted2 && s.RequestType.errors" class="invalid-feedback">
+                  <div *ngIf="s.RequestType.errors.required"> Visit Type is required</div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+            </div>
+            <button class="buttonsintro" type="submit" *ngIf="!Loading2">Request Appointment</button>
+            <h5 class="text-center">
+              <img src="assets/images/loading-icon.gif" id="loading">
+
+            </h5>
+          </form>
+
         </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
+  </div>
 </div>
-  

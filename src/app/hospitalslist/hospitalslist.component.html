@@ -1,3 +1,5 @@
+<div id="top"></div>
+
 <section id="doctorlist">
   <div class="row">
     <div class="col-md-1"></div>
@@ -7,7 +9,7 @@
           <a href="#" style="color:#FF5545">Home</a>
         </li>
         <li class="nav-item">
-          <a href="#" style="color:#FF5545"> &nbsp;/ Hospital List</a>
+          <a style="color:#FF5545"> &nbsp;/ Hospital List</a>
         </li>
       </ul>
 
@@ -18,116 +20,116 @@
   <div class="row">
     <div class="col-lg-1"></div>
 
-    
+
     <div class="col-lg-3 col-md-12 d-none d-lg-block">
-        <div class="card-header text-center" id="doclist-head"><i class="fas fa-filter fa-lg"></i> &nbsp;Filter </div>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h3 class="text-center" style="color:#FF5545">Choose Specific Hospital</h3>
-            <br>
-            <br>
-            <form>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-1">
-                      <h3>
-                        <i class="fas fa-map-marker-alt fa-lg icons"></i>
-                      </h3>
-                    </div>
-                    <div class="col-md-10">
-                      <select class="dropdownfilter">
-                        <option>Area</option>
-                        <option>Area1</option>
-                        <option>Area2</option>
-  
-                      </select>
-  
-                    </div>
+      <div class="card-header text-center doclist-head"><i class="fas fa-filter fa-lg"></i> &nbsp;Filter </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="text-center" style="color:#FF5545">Choose Specific Hospital</h3>
+          <br>
+          <br>
+          <form>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-1">
+                    <h3>
+                      <i class="fas fa-map-marker-alt fa-lg icons"></i>
+                    </h3>
                   </div>
-                  <hr>
-  
-                </div>
-                <br>
-                <br>
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-1">
-                      <h3>
-                        <i class="fas fa-notes-medical fa-lg icons"></i>
-                      </h3>
-                    </div>
-                    <div class="col-md-10">
-                      <select class="dropdownfilter">
-                        <option>Insurance</option>
-                        <option>Insurance1</option>
-                        <option>Insurance2</option>
-  
-                      </select>
-  
-                    </div>
+                  <div class="col-md-10">
+                    <select class="dropdownfilter" [(ngModel)]="AreaId" [ngModelOptions]="{standalone: true}">
+                      <option value="" selected>Area</option>
+                      <option *ngFor="let area of Areas" value="{{area.Id}}">{{area.name}}</option>
+                    </select>
+
                   </div>
-                  <hr>
-  
                 </div>
-                <br>
-                <br>
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-1">
-                      <h3>
-                        <i class="fas fa-hospital-alt fa-lg icons"></i>
-                      </h3>
-                    </div>
-                    <div class="col-md-10">
-                      <select class="dropdownfilter">
-                        <option>Facility Type</option>
-                        <option>Type1</option>
-                        <option>Type2</option>
-  
-                      </select>
-  
-                    </div>
-                  </div>
-                  <hr>
-  
-                </div>
-                <br>
-                <br>
-                <div class="col-md-12">
-                  <button class="buttonsintro"><b>Send</b></button>
-                </div>
+                <hr>
+
               </div>
-            </form>
-          </div>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-1">
+                    <h3>
+                      <i class="fas fa-notes-medical fa-lg icons"></i>
+                    </h3>
+                  </div>
+                  <div class="col-md-10">
+                    <select class="dropdownfilter" [(ngModel)]="InsuranceId" [ngModelOptions]="{standalone: true}">
+                      <option value="" selected>Insurance</option>
+                      <option *ngFor="let comp of Comps" value="{{comp.Id}}">{{comp.Name}}</option>
+
+                    </select>
+
+                  </div>
+                </div>
+                <hr>
+
+              </div>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-1">
+                    <h3>
+                      <i class="fas fa-hospital-alt fa-lg icons"></i>
+                    </h3>
+                  </div>
+                  <div class="col-md-10">
+                    <select class="dropdownfilter" [(ngModel)]="FacType" [ngModelOptions]="{standalone: true}">
+                      <option value="" selected>Facility Type</option>
+                      <option *ngFor="let fac of FacTypes" value="{{fac.Id}}">{{fac.name}}</option>
+                    </select>
+
+                  </div>
+                </div>
+                <hr>
+
+              </div>
+              <br>
+              <br>
+              <div class="col-md-12">
+                <button class="buttonsintro" (click)="Filter()"><b>Filter</b></button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-  
+    </div>
+
 
     <div class="col-lg-7 col-md-12">
-      <div class="card-header text-center" id="doclist-head"><i class="far fa-hospital fa-lg"></i> &nbsp;Hospital List
+      <div class="card-header text-center doclist-head"><i class="far fa-hospital fa-lg"></i> &nbsp;Hospital List
       </div>
 
-      <a routerLink="/hospital-profile">
-      <div class="card mb-3 doc-card" id="doc-card1">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <img class="rounded-circle" id="doc-img" width="150" height="150" src="assets/images/Layer4.png">
-                <div class="col-6 col-md-5">
-                  <ul class="list-unstyled">
-                    <li id="doc-list" style="color:#FF5545">
-                      <h4>
-                        Hospital Name
-                      </h4>
-                    </li>
-                    <li id="doc-list">
-                      <h5>
-                        Zamalek, Cairo
-                      </h5>
-                    </li>
-                    <li id="doc-list">
+      <a *ngFor="let hos of HosList | paginate: { itemsPerPage: 5, currentPage: Page }">
+        <div class=" card mb-3 doc-card" id="doc-card1">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <a routerLink="/hospital-profile/{{hos.Id}}">
+                    <img class="rounded-circle" id="doc-img" width="150" height="150" src="{{hos.ImageUrl}}"
+                      (error)="hos.ImageUrl = 'assets/images/fac.png'">
+                  </a>
+                  <div class="col-6 col-md-5">
+                    <ul class="list-unstyled">
+                      <li class="doc-list" style="color:#FF5545">
+                        <h4>
+                          <a routerLink="/hospital-profile/{{hos.Id}}">
+                            {{hos.Name}}
+                          </a>
+                        </h4>
+                      </li>
+                      <li class="doc-list">
+                        <h5>
+                          {{hos.Area}}
+                        </h5>
+                      </li>
+                      <!-- <li class="doc-list">
                       <h5>
                         <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
                           id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
@@ -135,375 +137,87 @@
                       </h5>
 
                     </li>
+                     -->
 
-
-                  </ul>
-
-                </div>
-                <div class="col-md-1 d-block d-sm-none">
-                  <a id="favo" (click)='toggle()'>
-                    <h3>
-                      <ng-template [ngIf]="!favo_flag">
-                        <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                      </ng-template>
-                      <ng-template [ngIf]="favo_flag">
-                        <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                      </ng-template>
-                    </h3>
-                  </a>
-                </div>
-
-
-              </div>
-
-            </div>
-            <div class="col-md-5">
-              <div class="row" style="margin-top:10%;">
-                <div class="col-md-6">
-                  <h6 class="text-center"><i class="fas fa-phone fa-lg" id="docicon"></i>&nbsp; 012345678921
-                  </h6>
-                </div>
-
-                <div class="col-md-6">
-                  <h6 class="text-center"><i class="fas fa-envelope fa-lg" id="docicon"></i>&nbsp; Send message</h6>
-                </div>
-                <br>
-                
-                <div class="col-md-6">
-                  <h6 class="text-center"><i class="fas fa-map-marker-alt fa-lg" id="docicon"></i>&nbsp; Location</h6>
-                </div>
-
-                <div class="col-md-6">
-                  <h6 class="text-center"><i class="fas fa-globe fa-lg" id="docicon"></i>&nbsp; Website</h6>
-                </div>
-
-
-              </div>
-
-            </div>
-
-            <div class="col-md-1 d-none d-sm-block">
-              <a id="favo" (click)='toggle()'>
-                <h3>
-                  <ng-template [ngIf]="!favo_flag">
-                    <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                  </ng-template>
-                  <ng-template [ngIf]="favo_flag">
-                    <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                  </ng-template>
-                </h3>
-              </a>
-            </div>
-
-
-
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <a routerLink="/hospital-profile">
-
-      <div class="card mb-3 doc-card" id="doc-card1">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="row">
-                  <img class="rounded-circle" id="doc-img" width="150" height="150" src="assets/images/Layer4.png">
-                  <div class="col-6 col-md-5">
-                    <ul class="list-unstyled">
-                      <li id="doc-list" style="color:#FF5545">
-                        <h4>
-                          Hospital Name
-                        </h4>
-                      </li>
-                      <li id="doc-list">
-                        <h5>
-                          Zamalek, Cairo
-                        </h5>
-                      </li>
-                      <li id="doc-list">
-                        <h5>
-                          <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                            id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-  
-                        </h5>
-  
-                      </li>
-  
-  
                     </ul>
-  
+
                   </div>
                   <div class="col-md-1 d-block d-sm-none">
-                    <a id="favo" (click)='toggle()'>
+                    <a id="favo" (click)='toggleFav(hos.Id , hos.IsFavorite)'>
                       <h3>
-                        <ng-template [ngIf]="!favo_flag">
+                        <ng-template [ngIf]="!hos.IsFavorite">
                           <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
                         </ng-template>
-                        <ng-template [ngIf]="favo_flag">
+                        <ng-template [ngIf]="hos.IsFavorite">
                           <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
                         </ng-template>
                       </h3>
                     </a>
                   </div>
-  
-  
+
+
                 </div>
-  
+
               </div>
               <div class="col-md-5">
                 <div class="row" style="margin-top:10%;">
                   <div class="col-md-6">
-                    <h6 class="text-center"><i class="fas fa-phone fa-lg" id="docicon"></i>&nbsp; 012345678921
+                    <h6 class="text-center"><i [ngClass]="hos.ContactNumber ?  'fas fa-phone fa-lg docicon' : 'fas fa-phone fa-lg docicon-out'"></i>&nbsp; {{hos.ContactNumber}}
                     </h6>
                   </div>
-  
+
                   <div class="col-md-6">
-                    <h6 class="text-center"><i class="fas fa-envelope fa-lg" id="docicon"></i>&nbsp; Send message</h6>
+                    <h6 class="text-center"><i class="fas fa-envelope fa-lg docicon"></i>&nbsp; Send message</h6>
                   </div>
                   <br>
-                  
+
                   <div class="col-md-6">
-                    <h6 class="text-center"><i class="fas fa-map-marker-alt fa-lg" id="docicon"></i>&nbsp; Location</h6>
+                    <h6 class="text-center"><a href="https://www.google.com/maps/search/?api=1&query={{hos.Location}}"
+                        target="_blank"><i [ngClass]="hos.Location ?  'fas fa-map-marker-alt fa-lg docicon' : 'fas fa-map-marker-alt fa-lg docicon-out'"></i>&nbsp; Location</a></h6>
                   </div>
-  
+
                   <div class="col-md-6">
-                    <h6 class="text-center"><i class="fas fa-globe fa-lg" id="docicon"></i>&nbsp; Website</h6>
+                    <h6 class="text-center"><a target="_blank" href="http://{{hos.WebSite}}"><i
+                      [ngClass]="hos.WebSite ?  'fas fa-globe fa-lg docicon' : 'fas fa-globe fa-lg docicon-out'"></i>&nbsp; Website</a></h6>
                   </div>
-  
-  
+
+
                 </div>
-  
+
               </div>
-  
+
               <div class="col-md-1 d-none d-sm-block">
-                <a id="favo" (click)='toggle()'>
+                <a id="favo" (click)='toggleFav(hos.Id , hos.IsFavorite)'>
                   <h3>
-                    <ng-template [ngIf]="!favo_flag">
+                    <ng-template [ngIf]="!hos.IsFavorite">
                       <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
                     </ng-template>
-                    <ng-template [ngIf]="favo_flag">
+                    <ng-template [ngIf]="hos.IsFavorite">
                       <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
                     </ng-template>
                   </h3>
                 </a>
+                
               </div>
-  
-  
-  
+
+
+
             </div>
           </div>
-      </div>
+        </div>
       </a>
-      <a routerLink="/hospital-profile">
+      <h5 class="text-center">
+        <img src="assets/images/loading-icon.gif" id="loading">
 
-      <div class="card mb-3 doc-card" id="doc-card1">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <img class="rounded-circle" id="doc-img" width="150" height="150" src="assets/images/Layer4.png">
-                    <div class="col-6 col-md-5">
-                      <ul class="list-unstyled">
-                        <li id="doc-list" style="color:#FF5545">
-                          <h4>
-                            Hospital Name
-                          </h4>
-                        </li>
-                        <li id="doc-list">
-                          <h5>
-                            Zamalek, Cairo
-                          </h5>
-                        </li>
-                        <li id="doc-list">
-                          <h5>
-                            <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                              id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-    
-                          </h5>
-    
-                        </li>
-    
-    
-                      </ul>
-    
-                    </div>
-                    <div class="col-md-1 d-block d-sm-none">
-                      <a id="favo" (click)='toggle()'>
-                        <h3>
-                          <ng-template [ngIf]="!favo_flag">
-                            <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                          </ng-template>
-                          <ng-template [ngIf]="favo_flag">
-                            <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                          </ng-template>
-                        </h3>
-                      </a>
-                    </div>
-    
-    
-                  </div>
-    
-                </div>
-                <div class="col-md-5">
-                  <div class="row" style="margin-top:10%;">
-                    <div class="col-md-6">
-                      <h6 class="text-center"><i class="fas fa-phone fa-lg" id="docicon"></i>&nbsp; 012345678921
-                      </h6>
-                    </div>
-    
-                    <div class="col-md-6">
-                      <h6 class="text-center"><i class="fas fa-envelope fa-lg" id="docicon"></i>&nbsp; Send message</h6>
-                    </div>
-                    <br>
-                    
-                    <div class="col-md-6">
-                      <h6 class="text-center"><i class="fas fa-map-marker-alt fa-lg" id="docicon"></i>&nbsp; Location</h6>
-                    </div>
-    
-                    <div class="col-md-6">
-                      <h6 class="text-center"><i class="fas fa-globe fa-lg" id="docicon"></i>&nbsp; Website</h6>
-                    </div>
-    
-    
-                  </div>
-    
-                </div>
-    
-                <div class="col-md-1 d-none d-sm-block">
-                  <a id="favo" (click)='toggle()'>
-                    <h3>
-                      <ng-template [ngIf]="!favo_flag">
-                        <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                      </ng-template>
-                      <ng-template [ngIf]="favo_flag">
-                        <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                      </ng-template>
-                    </h3>
-                  </a>
-                </div>
-    
-    
-    
-              </div>
-            </div>
-      </div>
-    </a>
-      <a routerLink="/hospital-profile">
+      </h5>
+      <h2 class="text-center notfound" *ngIf="NotFound"> No results found matching your search criteria</h2>
 
-      <div class="card mb-3 doc-card" id="doc-card1">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="row">
-                      <img class="rounded-circle" id="doc-img" width="150" height="150" src="assets/images/Layer4.png">
-                      <div class="col-6 col-md-5">
-                        <ul class="list-unstyled">
-                          <li id="doc-list" style="color:#FF5545">
-                            <h4>
-                              Hospital Name
-                            </h4>
-                          </li>
-                          <li id="doc-list">
-                            <h5>
-                              Zamalek, Cairo
-                            </h5>
-                          </li>
-                          <li id="doc-list">
-                            <h5>
-                              <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                                id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-      
-                            </h5>
-      
-                          </li>
-      
-      
-                        </ul>
-      
-                      </div>
-                      <div class="col-md-1 d-block d-sm-none">
-                        <a id="favo" (click)='toggle()'>
-                          <h3>
-                            <ng-template [ngIf]="!favo_flag">
-                              <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                            </ng-template>
-                            <ng-template [ngIf]="favo_flag">
-                              <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                            </ng-template>
-                          </h3>
-                        </a>
-                      </div>
-      
-      
-                    </div>
-      
-                  </div>
-                  <div class="col-md-5">
-                    <div class="row" style="margin-top:10%;">
-                      <div class="col-md-6">
-                        <h6 class="text-center"><i class="fas fa-phone fa-lg" id="docicon"></i>&nbsp; 012345678921
-                        </h6>
-                      </div>
-      
-                      <div class="col-md-6">
-                        <h6 class="text-center"><i class="fas fa-envelope fa-lg" id="docicon"></i>&nbsp; Send message</h6>
-                      </div>
-                      <br>
-                      
-                      <div class="col-md-6">
-                        <h6 class="text-center"><i class="fas fa-map-marker-alt fa-lg" id="docicon"></i>&nbsp; Location</h6>
-                      </div>
-      
-                      <div class="col-md-6">
-                        <h6 class="text-center"><i class="fas fa-globe fa-lg" id="docicon"></i>&nbsp; Website</h6>
-                      </div>
-      
-      
-                    </div>
-      
-                  </div>
-      
-                  <div class="col-md-1 d-none d-sm-block">
-                    <a id="favo" (click)='toggle()'>
-                      <h3>
-                        <ng-template [ngIf]="!favo_flag">
-                          <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                        </ng-template>
-                        <ng-template [ngIf]="favo_flag">
-                          <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                        </ng-template>
-                      </h3>
-                    </a>
-                  </div>
-      
-      
-      
-                </div>
-              </div>
-      </div>
-      </a>
+      <h2 class="text-center">
+        <pagination-controls (pageChange)="Page = $event" (click)="Top()" directionLinks="true" autoHide="true"
+          responsive="true"></pagination-controls>
 
-      <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      </h2>
+
     </div>
 
 
@@ -529,17 +243,15 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="row">
-                  <div class="col-1">
+                  <div class="col-md-1">
                     <h3>
-                      <i class="fas fa-map-marker-alt icons"></i>
+                      <i class="fas fa-map-marker-alt fa-lg icons"></i>
                     </h3>
                   </div>
-                  <div class="col-10">
-                    <select class="dropdownfilter">
-                      <option>Area</option>
-                      <option>Area1</option>
-                      <option>Area2</option>
-
+                  <div class="col-md-10">
+                    <select class="dropdownfilter" [(ngModel)]="AreaId" [ngModelOptions]="{standalone: true}">
+                      <option value="" selected>Area</option>
+                      <option *ngFor="let area of Areas" value="{{area.Id}}">{{area.name}}</option>
                     </select>
 
                   </div>
@@ -547,19 +259,19 @@
                 <hr>
 
               </div>
+              <br>
               <br>
               <div class="col-md-12">
                 <div class="row">
-                  <div class="col-1">
+                  <div class="col-md-1">
                     <h3>
-                      <i class="fas fa-notes-medical icons"></i>
+                      <i class="fas fa-notes-medical fa-lg icons"></i>
                     </h3>
                   </div>
-                  <div class="col-10">
-                    <select class="dropdownfilter">
-                      <option>Insurance</option>
-                      <option>Insurance1</option>
-                      <option>Insurance2</option>
+                  <div class="col-md-10">
+                    <select class="dropdownfilter" [(ngModel)]="InsuranceId" [ngModelOptions]="{standalone: true}">
+                      <option value="" selected>Insurance</option>
+                      <option *ngFor="let comp of Comps" value="{{comp.Id}}">{{comp.Name}}</option>
 
                     </select>
 
@@ -569,11 +281,29 @@
 
               </div>
               <br>
+              <br>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-1">
+                    <h3>
+                      <i class="fas fa-hospital-alt fa-lg icons"></i>
+                    </h3>
+                  </div>
+                  <div class="col-md-10">
+                    <select class="dropdownfilter" [(ngModel)]="FacType" [ngModelOptions]="{standalone: true}">
+                      <option value="" selected>Facility Type</option>
+                      <option *ngFor="let fac of FacTypes" value="{{fac.Id}}">{{fac.name}}</option>
+                    </select>
 
+                  </div>
+                </div>
+                <hr>
+
+              </div>
               <br>
               <br>
               <div class="col-md-12">
-                <button class="buttonsintro"><b>Send</b></button>
+                <button class="buttonsintro" (click)="Filter()"><b>Filter</b></button>
               </div>
             </div>
           </form>

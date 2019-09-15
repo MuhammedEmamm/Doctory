@@ -7,7 +7,7 @@
           <a href="#" style="color:#FF5545">Home</a>
         </li>
         <li class="nav-item">
-          <a href="#" style="color:#FF5545"> &nbsp;/ Family Members</a>
+          <a style="color:#FF5545"> &nbsp;/ Family Members</a>
         </li>
       </ul>
 
@@ -23,179 +23,39 @@
       </div>
       <br class="d-block d-md-none">
 
-      <div class="card mb-3" id="family-card">
+      <div class="card mb-3 family-card" *ngFor="let mem of AllMembers">
         <div class="card-body">
           <div class="row">
             <div class="col-md-12">
               <div class="row">
                 <div class="col-4 col-md-3">
                   <h6 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/architecture_city_view_from_above_buildings_river_118446_1920x1080.jpg">
+                    <img class="rounded-circle doc-img" src="{{mem.Image}}"
+                      (error)="mem.Image = 'assets/images/user.png'">
 
                   </h6>
 
                 </div>
                 <div class="col-8 col-md-9">
-                  <div id="blog-title">
-                    <h4><b>Mariam Roshdy </b>
+                  <div class="blog-title">
+                    <h4><b>{{mem.Name}} </b>
                       <div class="circle pull-right">
-                        <h3><i class="fas fa-edit" id="profile-icons"></i></h3>
+                        <a (click)="MemberDetails(mem.Id)">
+                          <h3><i class="fas fa-edit" id="profile-icons"></i></h3>
+                        </a>
                       </div>
                     </h4>
-                    <h6 style="color:black">Sister</h6>
-
+                    <h6 style="color:black">{{mem.Relationship}}</h6>
                   </div>
-
-                  <div id="blog-desc">
+                  <div class="blog-desc">
                     <div class="row">
                       <div class="col-md-4">
-                        <h6 class="d-none d-md-block">Date:</h6>
-                        <p style="color:black">11/09/2018</p>
+                        <h6 class="d-none d-md-block">DOB:</h6>
+                        <p style="color:black">{{mem.DOB | date}}</p>
                       </div>
                       <div class="col-md-4">
-                        <h6 class="d-none d-md-block">ID:</h6>
-                        <p style="color:black">Patinet ID</p>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-3" id="family-card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-4 col-md-3">
-                  <h6 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/architecture_city_view_from_above_buildings_river_118446_1920x1080.jpg">
-
-                  </h6>
-
-                </div>
-                <div class="col-8 col-md-9">
-                  <div id="blog-title">
-                    <h4><b>Mariam Roshdy </b>
-                      <div class="circle pull-right">
-                        <h3><i class="fas fa-edit" id="profile-icons"></i></h3>
-                      </div>
-                    </h4>
-                    <h6 style="color:black">Sister</h6>
-
-                  </div>
-
-                  <div id="blog-desc">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <h6 class="d-none d-md-block">Date:</h6>
-                        <p style="color:black">11/09/2018</p>
-                      </div>
-                      <div class="col-md-4">
-                        <h6 class="d-none d-md-block">ID:</h6>
-                        <p style="color:black">Patinet ID</p>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-3" id="family-card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-4 col-md-3">
-                  <h6 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/architecture_city_view_from_above_buildings_river_118446_1920x1080.jpg">
-
-                  </h6>
-
-                </div>
-                <div class="col-8 col-md-9">
-                  <div id="blog-title">
-                    <h4><b>Mariam Roshdy </b>
-                      <div class="circle pull-right">
-                        <h3><i class="fas fa-edit" id="profile-icons"></i></h3>
-                      </div>
-                    </h4>
-                    <h6 style="color:black">Sister</h6>
-
-                  </div>
-
-                  <div id="blog-desc">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <h6 class="d-none d-md-block">Date:</h6>
-                        <p style="color:black">11/09/2018</p>
-                      </div>
-                      <div class="col-md-4">
-                        <h6 class="d-none d-md-block">ID:</h6>
-                        <p style="color:black">Patinet ID</p>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-3" id="family-card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-4 col-md-3">
-                  <h6 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/architecture_city_view_from_above_buildings_river_118446_1920x1080.jpg">
-
-                  </h6>
-
-                </div>
-                <div class="col-8 col-md-9">
-                  <div id="blog-title">
-                    <h4><b>Mariam Roshdy </b>
-                      <div class="circle pull-right">
-                        <h3><i class="fas fa-edit" id="profile-icons"></i></h3>
-                      </div>
-                    </h4>
-                    <h6 style="color:black">Sister</h6>
-
-                  </div>
-
-                  <div id="blog-desc">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <h6 class="d-none d-md-block">Date:</h6>
-                        <p style="color:black">11/09/2018</p>
-                      </div>
-                      <div class="col-md-4">
-                        <h6 class="d-none d-md-block">ID:</h6>
-                        <p style="color:black">Patinet ID</p>
+                        <h6 class="d-none d-md-block">Mobile Number:</h6>
+                        <p style="color:black">{{mem.PhoneNumber}}</p>
                       </div>
 
                     </div>
@@ -216,7 +76,7 @@
         <div class="col-2"></div>
         <div class="col-8">
           <a data-toggle="modal" data-target="#add-member">
-            <button id="buttonsintro">Add New Member</button>
+            <button class="buttonsintro">Add New Member</button>
           </a>
         </div>
         <br>
@@ -231,37 +91,54 @@
       </div>
       <div class="card mb-3">
         <div class="card-body">
-          <form>
+          <form [formGroup]="AddFamilyMember" (ngSubmit)="AddMember()">
             <div class="row">
               <div class="col-4 col-lg-4 col-md-5"></div>
               <div class="col-4 col-lg-4 col-md-4 ">
-                <div class="circle-form"></div>
+                <h5 class="text-center">
+                  <img class="rounded-circle doc-img" [src]="Image">
+                </h5>
+                <div class="upload-btn-wrapper">
+                  <button class="upload-btn"><i class="fas fa-camera icons"></i></button>
+                  <input type="file" name="myfile" (change)="onFileChanged($event)" />
+                </div>
               </div>
 
             </div>
             <br>
             <div class="row">
-              <div class="col-1 col-md-1"><i class="fas fa-user fa-lg"></i></div>
+              <div class="col-1 col-md-1"><i class="fas fa-user fa-lg icons"></i></div>
               <div class="col-5 col-md-5">
-                <input type="text" id="inputform" placeholder="First Name">
-
+                <input type="text" class="inputform" placeholder="First Name" formControlName="FirstName"
+                  [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }">
+                <div *ngIf="submitted && f.FirstName.errors" class="invalid-feedback">
+                  <div *ngIf="f.FirstName.errors.required"> First Name is required</div>
+                </div>
               </div>
               <div class="col-5 col-md-5">
-                <input type="text" id="inputform" placeholder="Last Name">
+                <input type="text" class="inputform" placeholder="Last Name" formControlName="LastName"
+                  [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }">
+                <div *ngIf="submitted && f.LastName.errors" class="invalid-feedback">
+                  <div *ngIf="f.LastName.errors.required"> Last Name is required</div>
+                </div>
               </div>
 
             </div>
             <br>
             <div class="row">
-              <div class="col-1 col-md-1"><i class="far fa-calendar fa-lg"></i></div>
+              <div class="col-1 col-md-1"><i class="far fa-calendar fa-lg icons"></i></div>
               <div class="col-10 col-md-10">
-                <input type="date" id="inputform" placeholder="DD/MM/YY">
+                <input type="date" class="inputform" placeholder="DD/MM/YY" formControlName="DOB"
+                  [ngClass]="{ 'is-invalid': submitted && f.DOB.errors }">
+                <div *ngIf="submitted && f.DOB.errors" class="invalid-feedback">
+                  <div *ngIf="f.DOB.errors.required"> Date of birth is required</div>
+                </div>
               </div>
 
             </div>
             <br>
             <div class="row">
-              <div class="col-1 col-md-1"><i class="fas fa-venus-mars fa-lg"></i>
+              <div class="col-1 col-md-1"><i class="fas fa-venus-mars fa-lg icons"></i>
               </div>
 
               <div class="col-3 col-md-3">
@@ -269,49 +146,88 @@
               </div>
               <div class="col-6  col-md-6">
                 <div>
-                  <input type="radio">
+                  <input type="radio" value="true" formControlName="Gender"
+                    [ngClass]="{ 'is-invalid': submitted && f.Gender.errors }">
                   <label style="font-size:10px">&nbsp;<b>Male</b></label>
                   &nbsp;
-                  <input type="radio">
+                  <input type="radio" value="false" formControlName="Gender"
+                    [ngClass]="{ 'is-invalid': submitted && f.Gender.errors }">
                   <label style="font-size:10px">&nbsp;<b>Female</b></label>
+                </div>
+
+              </div>
+              <div *ngIf="submitted && f.Gender.errors" class="invalid-feedback">
+                <div *ngIf="f.Gender.errors.required"> Gender is required</div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-1 col-md-1"><i class="fas fa-mobile-alt fa-lg icons"></i></div>
+              <div class="col-10 col-md-10">
+                <div class="row">
+                  <div class="col-5">
+                    <select class="dropdownform" [(ngModel)]="Code" [ngModelOptions]="{standalone: true}"
+                      style="margin-top:6%">
+                      <option *ngFor="let code of Codes" [value]="code.code">{{code.name}} ({{code.code}})</option>
+
+                    </select>
+                  </div>
+                  <div class="col-7">
+                    <input type="text" class="inputform" placeholder="Mobile Number" formControlName="Phonenumber"
+                      [ngClass]="{ 'is-invalid': submitted && f.Phonenumber.errors }">
+                  </div>
+                </div>
+
+                <!-- <p class="pull-right doccontent" ><u>Change Number</u></p> -->
+                <div *ngIf="submitted && f.Phonenumber.errors" class="invalid-feedback">
+                  <div *ngIf="f.Phonenumber.errors.required"> Phone Number is required</div>
+                </div>
+              </div>
+
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-1 col-md-1"><i class="fas fa-user-friends fa-lg icons"></i></div>
+              <div class="col-10 col-md-10">
+                <select class="dropdownform" formControlName="RelationShipId"
+                  [ngClass]="{ 'is-invalid': submitted && f.RelationShipId.errors }">
+                  <option value="" disabled selected>Relationship</option>
+                  <option value="{{r.Id}}" *ngFor="let r of Relations">{{r.name}}</option>
+
+                </select>
+                <div *ngIf="submitted && f.RelationShipId.errors" class="invalid-feedback">
+                  <div *ngIf="f.RelationShipId.errors.required"> RelationShip is required</div>
+                </div>
+              </div>
+
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-1 col-md-1">
+                <h3 class="text-center"><i class="far fa-id-card icons "></i></h3>
+              </div>
+              <div class="col-10 col-md-10">
+                <input type="text" class="inputform" placeholder="Cpr Number" formControlName="CPRNumber"
+                  [ngClass]="{ 'is-invalid': submitted && f.CPRNumber.errors }">
+
+                <div *ngIf="submitted && f.CPRNumber.errors" class="invalid-feedback">
+                  <div *ngIf="f.CPRNumber.errors.required"> CPR Number is required</div>
                 </div>
 
               </div>
 
             </div>
-            <br>
-            <div class="row">
-              <div class="col-1 col-md-1"><i class="fas fa-mobile-alt fa-lg"></i></div>
-              <div class="col-10 col-md-10">
-                <input type="number" id="inputform" placeholder="Mobile Number">
-                <p class="pull-right" id="doccontent"><u>Change Number</u></p>
 
-              </div>
-
-            </div>
-            <br>
-            <div class="row">
-              <div class="col-1 col-md-1"><i class="fas fa-user-friends fa-lg"></i></div>
-              <div class="col-10 col-md-10">
-                <select id="dropdownform">
-                  <option value="" disabled selected>Relationship</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
-
-              </div>
-
-            </div>
             <br>
             <div class="row">
               <div class="col-md-1"></div>
               <div class="col-md-10">
-                <button id="buttonsintro">Add New Member</button>
+                <button class="buttonsintro" type="submit">Add New Member</button>
               </div>
 
             </div>
           </form>
+
 
 
         </div>
@@ -323,7 +239,8 @@
 
 <!-- Modal -->
 
-<div class="modal fade" id="add-member" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="add-member" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -334,37 +251,54 @@
       </div>
       <div class="modal-body">
         <div class="card-body">
-          <form>
+          <form [formGroup]="AddFamilyMember" (ngSubmit)="AddMember()">
             <div class="row">
               <div class="col-4 col-lg-4 col-md-5"></div>
               <div class="col-4 col-lg-4 col-md-4 ">
-                <div class="circle-form"></div>
+                <h5 class="text-center">
+                  <img class="rounded-circle doc-img" [src]="Image">
+                </h5>
+                <div class="upload-btn-wrapper">
+                  <button class="upload-btn"><i class="fas fa-camera icons"></i></button>
+                  <input type="file" name="myfile" (change)="onFileChanged($event)" />
+                </div>
               </div>
 
             </div>
             <br>
             <div class="row">
-              <div class="col-1 col-md-1"><i class="fas fa-user fa-lg"></i></div>
+              <div class="col-1 col-md-1"><i class="fas fa-user fa-lg icons"></i></div>
               <div class="col-5 col-md-5">
-                <input type="text" id="inputform" placeholder="First Name">
-
+                <input type="text" class="inputform" placeholder="First Name" formControlName="FirstName"
+                  [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }">
+                <div *ngIf="submitted && f.FirstName.errors" class="invalid-feedback">
+                  <div *ngIf="f.FirstName.errors.required"> First Name is required</div>
+                </div>
               </div>
               <div class="col-5 col-md-5">
-                <input type="text" id="inputform" placeholder="Last Name">
+                <input type="text" class="inputform" placeholder="Last Name" formControlName="LastName"
+                  [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }">
+                <div *ngIf="submitted && f.LastName.errors" class="invalid-feedback">
+                  <div *ngIf="f.LastName.errors.required"> Last Name is required</div>
+                </div>
               </div>
 
             </div>
             <br>
             <div class="row">
-              <div class="col-1 col-md-1"><i class="far fa-calendar fa-lg"></i></div>
+              <div class="col-1 col-md-1"><i class="far fa-calendar fa-lg icons"></i></div>
               <div class="col-10 col-md-10">
-                <input type="date" id="inputform" placeholder="DD/MM/YY">
+                <input type="date" class="inputform" placeholder="DD/MM/YY" formControlName="DOB"
+                  [ngClass]="{ 'is-invalid': submitted && f.DOB.errors }">
+                <div *ngIf="submitted && f.DOB.errors" class="invalid-feedback">
+                  <div *ngIf="f.DOB.errors.required"> Date of birth is required</div>
+                </div>
               </div>
 
             </div>
             <br>
             <div class="row">
-              <div class="col-1 col-md-1"><i class="fas fa-venus-mars fa-lg"></i>
+              <div class="col-1 col-md-1"><i class="fas fa-venus-mars fa-lg icons"></i>
               </div>
 
               <div class="col-3 col-md-3">
@@ -372,53 +306,91 @@
               </div>
               <div class="col-6  col-md-6">
                 <div>
-                  <input type="radio">
+                  <input type="radio" value="true" formControlName="Gender"
+                    [ngClass]="{ 'is-invalid': submitted && f.Gender.errors }">
                   <label style="font-size:10px">&nbsp;<b>Male</b></label>
                   &nbsp;
-                  <input type="radio">
+                  <input type="radio" value="false" formControlName="Gender"
+                    [ngClass]="{ 'is-invalid': submitted && f.Gender.errors }">
                   <label style="font-size:10px">&nbsp;<b>Female</b></label>
+                </div>
+
+              </div>
+              <div *ngIf="submitted && f.Gender.errors" class="invalid-feedback">
+                <div *ngIf="f.Gender.errors.required"> Gender is required</div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-1 col-md-1"><i class="fas fa-mobile-alt fa-lg icons"></i></div>
+              <div class="col-10 col-md-10">
+                <div class="row">
+                  <div class="col-5">
+                    <select class="dropdownform" [(ngModel)]="Code" [ngModelOptions]="{standalone: true}"
+                      style="margin-top:6%">
+                      <option *ngFor="let code of Codes" [value]="code.code">{{code.name}} ({{code.code}})</option>
+
+                    </select>
+                  </div>
+                  <div class="col-7">
+                    <input type="text" class="inputform" placeholder="Mobile Number" formControlName="Phonenumber"
+                      [ngClass]="{ 'is-invalid': submitted && f.Phonenumber.errors }">
+                  </div>
+                </div>
+
+                <!-- <p class="pull-right doccontent" ><u>Change Number</u></p> -->
+                <div *ngIf="submitted && f.Phonenumber.errors" class="invalid-feedback">
+                  <div *ngIf="f.Phonenumber.errors.required"> Phone Number is required</div>
+                </div>
+              </div>
+
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-1 col-md-1"><i class="fas fa-user-friends fa-lg icons"></i></div>
+              <div class="col-10 col-md-10">
+                <select class="dropdownform" formControlName="RelationShipId"
+                  [ngClass]="{ 'is-invalid': submitted && f.RelationShipId.errors }">
+                  <option value="" disabled selected>Relationship</option>
+                  <option value="{{r.Id}}" *ngFor="let r of Relations">{{r.name}}</option>
+
+                </select>
+                <div *ngIf="submitted && f.RelationShipId.errors" class="invalid-feedback">
+                  <div *ngIf="f.RelationShipId.errors.required"> RelationShip is required</div>
+                </div>
+              </div>
+
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-1 col-md-1">
+                <h3 class="text-center"><i class="far fa-id-card icons "></i></h3>
+              </div>
+              <div class="col-10 col-md-10">
+                <input type="text" class="inputform" placeholder="Cpr Number" formControlName="CPRNumber"
+                  [ngClass]="{ 'is-invalid': submitted && f.CPRNumber.errors }">
+
+                <div *ngIf="submitted && f.CPRNumber.errors" class="invalid-feedback">
+                  <div *ngIf="f.CPRNumber.errors.required"> CPR Number is required</div>
                 </div>
 
               </div>
 
             </div>
-            <br>
-            <div class="row">
-              <div class="col-1 col-md-1"><i class="fas fa-mobile-alt fa-lg"></i></div>
-              <div class="col-10 col-md-10">
-                <input type="number" id="inputform" placeholder="Mobile Number">
-                <p class="pull-right" id="doccontent"><u>Change Number</u></p>
 
-              </div>
-
-            </div>
-            <br>
-            <div class="row">
-              <div class="col-1 col-md-1"><i class="fas fa-user-friends fa-lg"></i></div>
-              <div class="col-10 col-md-10">
-                <select id="dropdownform">
-                  <option value="" disabled selected>Relationship</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
-
-              </div>
-
-            </div>
             <br>
             <div class="row">
               <div class="col-md-1"></div>
               <div class="col-md-10">
-                <button id="buttonsintro">Add New Member</button>
+                <button class="buttonsintro" type="submit">Add New Member</button>
               </div>
 
             </div>
           </form>
 
 
-        </div>
 
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -426,3 +398,161 @@
     </div>
   </div>
 </div>
+<ng-template #EditFamily let-close="close">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="title text-center" id="largeModalLabel"><i class="fas fa-edit icons"></i> Edit Family Member</h3>
+    </div>
+    <div class="modal-body">
+      <div class="card-body">
+        <form [formGroup]="EditFamilyMember" (ngSubmit)="EditMember()">
+          <div class="row">
+            <div class="col-4 col-lg-4 col-md-5"></div>
+            <div class="col-4 col-lg-4 col-md-4 ">
+              <h5 class="text-center">
+                <img class="rounded-circle doc-img" [src]="Image2">
+              </h5>
+              <div class="upload-btn-wrapper">
+                <button class="upload-btn"><i class="fas fa-camera icons"></i></button>
+                <input type="file" name="myfile" (change)="onFileChangedEdit($event)" />
+              </div>
+            </div>
+
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-1 col-md-1"><i class="fas fa-user fa-lg icons"></i></div>
+            <div class="col-5 col-md-5">
+              <input type="text" class="inputform" placeholder="First Name" formControlName="FirstName"
+                [ngClass]="{ 'is-invalid': submitted2 && s.FirstName.errors }">
+              <div *ngIf="submitted2 && s.FirstName.errors" class="invalid-feedback">
+                <div *ngIf="s.FirstName.errors.required"> First Name is required</div>
+              </div>
+            </div>
+            <div class="col-5 col-md-5">
+              <input type="text" class="inputform" placeholder="Last Name" formControlName="LastName"
+                [ngClass]="{ 'is-invalid': submitted2 && s.LastName.errors }">
+              <div *ngIf="submitted2 && s.LastName.errors" class="invalid-feedback">
+                <div *ngIf="s.LastName.errors.required"> Last Name is required</div>
+              </div>
+            </div>
+
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-1 col-md-1"><i class="far fa-calendar fa-lg icons"></i></div>
+            <div class="col-10 col-md-10">
+              <input type="date" class="inputform" placeholder="DD/MM/YY" formControlName="DOB"
+                [ngClass]="{ 'is-invalid': submitted2 && s.DOB.errors }">
+              <div *ngIf="submitted2 && s.DOB.errors" class="invalid-feedback">
+                <div *ngIf="s.DOB.errors.required"> Date of birth is required</div>
+              </div>
+            </div>
+
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-1 col-md-1"><i class="fas fa-venus-mars fa-lg icons"></i>
+            </div>
+
+            <div class="col-3 col-md-3">
+              Gender
+            </div>
+            <div class="col-8  col-md-8">
+              <div class="row">
+                <div class="col-6">
+                  <input type="radio" [value]="true" formControlName="Gender"
+                    [ngClass]="{ 'is-invalid': submitted2 && s.Gender.errors }">
+                  <label style="font-size:10px">&nbsp;<b>Male</b></label>
+                </div>
+                <div class="col-4">
+                  <input type="radio" [value]="false" formControlName="Gender"
+                    [ngClass]="{ 'is-invalid': submitted2 && s.Gender.errors }">
+                  <label style="font-size:10px">&nbsp;<b>Female</b></label>
+                </div>
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+
+              </div>
+
+            </div>
+            <div *ngIf="submitted2 && s.Gender.errors" class="invalid-feedback text-center">
+              <div *ngIf="s.Gender.errors.required"> Gender is required</div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-1 col-md-1"><i class="fas fa-mobile-alt fa-lg icons"></i></div>
+            <div class="col-10 col-md-10">
+              <div class="row">
+                <div class="col-5">
+                  <select class="dropdownform" [(ngModel)]="Code" [ngModelOptions]="{standalone: true}"
+                    style="margin-top:6%">
+                    <option *ngFor="let code of Codes" [value]="code.code">{{code.name}} ({{code.code}})</option>
+
+                  </select>
+                </div>
+                <div class="col-7">
+                  <input type="text" class="inputform" placeholder="Mobile Number" formControlName="Phonenumber"
+                    [ngClass]="{ 'is-invalid': submitted && s.Phonenumber.errors }">
+                </div>
+              </div>
+              <!-- <p class="pull-right doccontent" ><u>Change Number</u></p> -->
+              <div *ngIf="submitted2 && s.Phonenumber.errors" class="invalid-feedback">
+                <div *ngIf="s.Phonenumber.errors.required"> Phone Number is required</div>
+              </div>
+            </div>
+
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-1 col-md-1"><i class="fas fa-user-friends fa-lg icons"></i></div>
+            <div class="col-10 col-md-10">
+              <select class="dropdownform" formControlName="RelationShipId"
+                [ngClass]="{ 'is-invalid': submitted2 && s.RelationShipId.errors }">
+                <option value="" disabled selected>Relationship</option>
+                <option value="{{r.Id}}" *ngFor="let r of Relations">{{r.name}}</option>
+
+              </select>
+              <div *ngIf="submitted2 && s.RelationShipId.errors" class="invalid-feedback">
+                <div *ngIf="s.RelationShipId.errors.required"> RelationShip is required</div>
+              </div>
+            </div>
+
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-1 col-md-1">
+              <h3 class="text-center"><i class="far fa-id-card icons icons"></i></h3>
+            </div>
+            <div class="col-10 col-md-10">
+              <input type="text" class="inputform" placeholder="Cpr Number" formControlName="CPRNumber"
+                [ngClass]="{ 'is-invalid': submitted && s.CPRNumber.errors }">
+
+              <div *ngIf="submitted && f.CPRNumber.errors" class="invalid-feedback">
+                <div *ngIf="s.CPRNumber.errors.required"> CPR Number is required</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <br>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <button class="buttonsintro" type="submit">Edit Member</button>
+            </div>
+
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn action-btn btn-warning waves-effect waves-light" (click)="close()"
+        data-dismiss="modal">Cancel</button>
+    </div>
+  </div>
+</ng-template>

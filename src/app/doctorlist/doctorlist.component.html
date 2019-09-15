@@ -1,3 +1,4 @@
+<div id="top"></div>
 <section id="doctorlist">
   <div class="row">
     <div class="col-md-1"></div>
@@ -18,285 +19,336 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-lg-3 d-none d-lg-block">
-      <div class="card-header text-center" id="doclist-head"><i class="fas fa-filter fa-lg"></i> &nbsp;Filter </div>
+      <div class="card-header text-center doclist-head"><i class="fas fa-filter fa-lg"></i> &nbsp;Filter </div>
       <div class="card mb-3">
         <div class="card-body">
 
           <div id="specialty " class="filterdiv">
-            <div id="filterhead">
-              <h6 class="card-title"><i class="fas fa-stethoscope"></i> Specialty</h6>
-              <hr>
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-stethoscope"></i> All Qualifications</h6>
+                <hr>
 
-            </div>
-
-            <div id="filtercontent">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">specialty 1</label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">specialty 2</label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2">
-                <label class="form-check-label" for="inlineCheckbox3">specialty 3</label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
-                <label class="form-check-label" for="inlineCheckbox4">specialty 4</label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option2">
-                <label class="form-check-label" for="inlineCheckbox5">specialty 5</label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option2">
-                <label class="form-check-label" for="inlineCheckbox6">specialty 6</label>
               </div>
 
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
-                <label class="form-check-label" for="inlineCheckbox7">specialty 7</label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
-                <label class="form-check-label" for="inlineCheckbox7">specialty 8</label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
-                <label class="form-check-label" for="inlineCheckbox7">specialty 9</label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
-                <label class="form-check-label" for="inlineCheckbox7">specialty 10</label>
-              </div>
+              <div class="filtercontent">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="inlineCheckbox0" [value]="''"
+                    [(ngModel)]="QualificationId" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="inlineCheckbox0">
+                    All
+                  </label>
+                </div>
 
-            </div>
+                <div class="form-check" *ngFor="let qual of AllQuals">
+                  <input class="form-check-input" type="radio" id="inlineCheckbox{{qual.Id}}" [value]="qual.Id"
+                    [(ngModel)]="QualificationId" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="inlineCheckbox{{qual.Id}}">{{qual.name}}</label>
+                </div>
 
+              </div>
+            </form>
           </div>
           <div id="gender" class="filterdiv">
-            <div id="filterhead">
-              <h6 class="card-title"><i class="fas fa-venus-mars"></i> Gender</h6>
-              <hr>
-            </div>
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-venus-mars"></i> Gender</h6>
+                <hr>
+              </div>
 
-            <div id="filtercontent">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option1">
-                <label class="form-check-label" for="inlineCheckbox10">Male </label>
+              <div class="filtercontent">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="all" [value]="''" [(ngModel)]="gender"
+                    [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="all">
+                    All
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="male" value="true" [(ngModel)]="gender"
+                    [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="male">Male </label>
+                </div>
+                <div class="form-check ">
+                  <input class="form-check-input" type="radio" id="Female" value="false" [(ngModel)]="gender"
+                    [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="Female">Female</label>
+                </div>
               </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="option2">
-                <label class="form-check-label" for="inlineCheckbox11">Female</label>
-              </div>
-            </div>
+            </form>
           </div>
           <div id="rated" class="filterdiv">
-            <div id="filterhead">
-              <h6 class="card-title"><i class="fas fa-star" id="docicon"></i> Rate</h6>
-              <hr>
-            </div>
-
-            <div id="filtercontent">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox12" value="option1">
-                <label class="form-check-label" for="inlineCheckbox12"><i class="fas fa-star" id="docicon"></i>
-                </label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox13" value="option2">
-                <label class="form-check-label" for="inlineCheckbox13"><i class="fas fa-star" id="docicon"></i><i id="docicon"
-                    class="fas fa-star"></i></label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox14" value="option2">
-                <label class="form-check-label" for="inlineCheckbox14"><i id="docicon" class="fas fa-star"></i><i id="docicon"
-                    class="fas fa-star"></i><i id="docicon" class="fas fa-star"></i></label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox15" value="option2">
-                <label class="form-check-label" for="inlineCheckbox15"><i id="docicon" class="fas fa-star"></i><i id="docicon"
-                    class="fas fa-star"></i><i id="docicon" class="fas fa-star"></i> <i id="docicon" class="fas fa-star"></i></label>
-              </div>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox16" value="option2">
-                <label class="form-check-label" for="inlineCheckbox16"><i id="docicon" class="fas fa-star"></i><i id="docicon"
-                    class="fas fa-star"></i><i id="docicon" class="fas fa-star"></i> <i id="docicon" class="fas fa-star"></i>
-                  <i id="docicon" class="fas fa-star"></i></label>
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-star" id="docicon"></i> Nationalities</h6>
+                <hr>
               </div>
 
-
-            </div>
-          </div>
-          <div id="fees" class="filterdiv">
-            <div id="filterhead">
-              <h6 class="card-title"><i class="fas fa-money-bill-alt"></i> Fees</h6>
-              <hr>
-            </div>
-
-            <div id="filtercontent">
-              <div class="form-group">
-                <div class="row" id="rangevalues">
-                  <div class="col-3 col-md-3">50</div>
-                  <div class="col-3 col-md-3">100</div>
-                  <div class="col-3 col-md-3">200</div>
-                  <div class="col-3 col-md-3">300</div>
-                  <div class="col-3 col-md-3">400</div>
-
+              <div class="filtercontent">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="all0" [value]="''" [(ngModel)]="NationalityId"
+                    [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="all0">
+                    All
+                  </label>
                 </div>
-                <input type="range" class="form-control-range" id="formControlRange" min="1" max="5" steps="1" value="1"
-                  list="feestracks">
+
+
+                <div class="form-check" *ngFor="let nat of AllNats">
+                  <input class="form-check-input" type="radio" id="nat{{nat.Id}}" [value]="nat.Id"
+                    [(ngModel)]="NationalityId" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="nat{{nat.Id}}">
+                    {{nat.name}}
+                  </label>
+                </div>
 
 
               </div>
-            </div>
-          </div>
 
+            </form>
+
+          </div>
+          <div id="Areas" class="filterdiv">
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-star" id="docicon"></i> Areas</h6>
+                <hr>
+              </div>
+
+              <div class="filtercontent">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="area0" [value]="''" [(ngModel)]="AreaId"
+                    [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="area0">
+                    All
+                  </label>
+                </div>
+
+                <div class="form-check" *ngFor="let area of Areas">
+                  <input class="form-check-input" type="radio" id="area{{area.Id}}" [value]="area.Id"
+                    [(ngModel)]="AreaId" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="area{{area.Id}}">
+                    {{area.name}}
+                  </label>
+                </div>
+
+
+
+              </div>
+
+            </form>
+
+          </div>
+          <div id="Langs" class="filterdiv">
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-star" id="docicon"></i> Languages</h6>
+                <hr>
+              </div>
+
+              <div class="filtercontent">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="lang0" [value]="''" [(ngModel)]="LangID"
+                    [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="lang0">
+                    All
+                  </label>
+                </div>
+
+                <div class="form-check" *ngFor="let lang of AllLangs">
+                  <input class="form-check-input" type="radio" id="lang{{lang.Id}}" [value]="lang.Id"
+                    [(ngModel)]="LangID" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="lang{{lang.Id}}">
+                    {{lang.name}}
+                  </label>
+                </div>
+
+
+              </div>
+
+            </form>
+
+          </div>
+          <div id="Comps" class="filterdiv">
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-star" id="docicon"></i> Insurance</h6>
+                <hr>
+              </div>
+
+              <div class="filtercontent">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="comp0" [value]="''" [(ngModel)]="InsuranceId"
+                    [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="comp0">
+                    All
+                  </label>
+                </div>
+                <div class="form-check" *ngFor="let comp of Comps">
+                  <input class="form-check-input" type="radio" id="comp{{comp.Id}}" [value]="comp.Id"
+                    [(ngModel)]="InsuranceId" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="comp{{comp.Id}}">
+                    {{comp.Name}}
+                  </label>
+                </div>
+
+
+              </div>
+
+            </form>
+
+          </div>
+          <br>
+          <button class="buttonsintro" (click)="Filter()">Filter</button>
 
         </div>
       </div>
     </div>
     <div class="col-lg-7 col-md-12">
-      <div class="card-header text-center" id="doclist-head"><i class="fas fa-user-md fa-lg"></i> &nbsp;Doctor List
+      <div class="card-header text-center doclist-head"><i class="fas fa-user-md fa-lg"></i> &nbsp;Doctor List
       </div>
-      <div class="card-header text-center d-none d-sm-block" id="schedule-head">
+      <div class="card-header text-center d-none d-sm-block schedule-head">
         <div class="row">
           <div class="col-6 col-md-6 ">
           </div>
           <div class="col-5 col-md-5">
-              <div class="row">
-                <div class="col-1 col-lg-1 col-md-1">
-                  <a class="carousel-control-prev" (click)="slidecalendarprev()" role="button" 
-                    id="sliderbtn">
-                    <i class="fas fa-arrow-left fa-lg"></i>
-                  </a>
-                </div>
-                <div class="col-10 col-lg-10 col-md-9">
-                      <div class="d-block w-100" style="width:100%">
-                        <div class="row">
-                          <div class="col-4 col-md-4 ">
-                            <h5 style="color : #FF5545">{{Months[monthindex].Day}}</h5>
-                            <h5 style="color : #FF5545">{{Months[monthindex].Date}}</h5>
-
-                            
-                          </div>
-                          <div class="col-4 col-md-4 ">
-                            <h5 style="color : #FF5545">{{Months[monthindex+1].Day}}</h5>
-                            <h5 style="color : #FF5545">{{Months[monthindex+1].Date}}</h5>
-                            
-                          </div>
-                          <div class="col-4 col-md-4 ">
-                            <h5 style="color : #FF5545">{{Months[monthindex+2].Day}}</h5>
-                            <h5 style="color : #FF5545">{{Months[monthindex+2].Date}}</h5>
-                            
-                          </div>
-                          
-
-                        </div>
-                      </div>  
-                </div>
-                <div class="col-1 col-lg-1 col-md-1">
-                  <a class="carousel-control-next" (click)="slidecalendarnext()" role="button" 
-                    id="sliderbtn">
-                    <i class="fas fa-arrow-right fa-lg"></i>
-                  </a>
-                </div>
-
+            <div class="row">
+              <div class="col-1 col-lg-1 col-md-1">
+                <a class="carousel-control-prev" (click)="slidecalendarprev()" role="button" id="sliderbtn">
+                  <i class="fas fa-arrow-left fa-lg"></i>
+                </a>
               </div>
-          </div>
+              <div class="col-10 col-lg-10 col-md-9">
+                <div class="d-block w-100" style="width:100%">
+                  <div class="row">
+                    <div class="col-4 col-md-4 ">
+                      <h5 style="color : #FF5545">{{Months[monthindex].Day}}</h5>
+                      <h5 style="color : #FF5545">{{Months[monthindex].Date}}</h5>
 
-        </div>
 
-      </div>
+                    </div>
+                    <div class="col-4 col-md-4 ">
+                      <h5 style="color : #FF5545">{{Months[monthindex+1].Day}}</h5>
+                      <h5 style="color : #FF5545">{{Months[monthindex+1].Date}}</h5>
 
-      <div class="card-header text-center d-block d-sm-none" id="schedule-head">
-        <div class="row">
-        
-          <div class="col-12 col-md-12">
-              <div class="row">
-                <div class="col-2 col-md-1">
-                  <a class="carousel-control-prev" (click)="slidecalendarprev()" role="button" 
-                    id="sliderbtn">
-                    <i class="fas fa-arrow-left fa-lg"></i>
-                  </a>
+                    </div>
+                    <div class="col-4 col-md-4 ">
+                      <h5 style="color : #FF5545">{{Months[monthindex+2].Day}}</h5>
+                      <h5 style="color : #FF5545">{{Months[monthindex+2].Date}}</h5>
+
+                    </div>
+
+
+                  </div>
                 </div>
-                <div class="col-8 col-md-10">
-                      <div class="d-block w-100" style="width:100%">
-                        <div class="row">
-                          <div class="col-12 col-md-12 ">
-                            <h5 style="color : #FF5545">{{Months[monthindex].Day}}</h5>
-                            <h5 style="color : #FF5545">{{Months[monthindex].Date}}</h5>    
-                          </div>
-                      
-
-                        </div>
-                      </div>  
-                </div>
-                <div class="col-2 col-md-1">
-                  <a class="carousel-control-next" (click)="slidecalendarnext()" role="button" 
-                    id="sliderbtn">
-                    <i class="fas fa-arrow-right fa-lg"></i>
-                  </a>
-                </div>
-
               </div>
-          </div>
-
-        </div>
-
-      </div>
-      
-      <a routerLink="/doc-profile">
-      <div class="card mb-3 doc-card" id="doc-card1">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-10 col-md-6">
-              <div class="row">
-                <img class="rounded-circle" id="doc-img" width="120" height="120" src="assets/images/Medical_Professional_stock.png">
-                <div class="col-6 col-md-5">
-                  <ul class="list-unstyled">
-                    <li id="doc-list" style="color:#FF5545">
-                      <h2>
-                          Doctor Name
-                      </h2>
-                    </li>
-                    <li id="doc-list">
-                      Specialty
-                    </li>
-                    <li id="doc-list">
-                      Clinic Name
-                    </li>
-                    <li id="doc-list">
-                      Zamalek, Cairo
-                    </li>
-                    <li id="doc-list">
-                      <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                        id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                    </li>
-
-
-                  </ul>
-
-                </div>
-
+              <div class="col-1 col-lg-1 col-md-1">
+                <a class="carousel-control-next" (click)="slidecalendarnext()" role="button" id="sliderbtn">
+                  <i class="fas fa-arrow-right fa-lg"></i>
+                </a>
               </div>
 
             </div>
-            <div class="col-1 d-block d-sm-none">
-                <a id="favo" (click)='toggle()'>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card-header text-center d-block d-sm-none schedule-head">
+        <div class="row">
+
+          <div class="col-12 col-md-12">
+            <div class="row">
+              <div class="col-2 col-md-1">
+                <a class="carousel-control-prev" (click)="slidecalendarprevmob()" role="button" id="sliderbtn">
+                  <i class="fas fa-arrow-left fa-lg"></i>
+                </a>
+              </div>
+              <div class="col-8 col-md-10">
+                <div class="d-block w-100" style="width:100%">
+                  <div class="row">
+                    <div class="col-12 col-md-12 ">
+                      <h5 style="color : #FF5545">{{Monthsmob[monthindexmob].Day}}</h5>
+                      <h5 style="color : #FF5545">{{Monthsmob[monthindexmob].Date}}</h5>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-2 col-md-1">
+                <a class="carousel-control-next" (click)="slidecalendarnextmob()" role="button" id="sliderbtn">
+                  <i class="fas fa-arrow-right fa-lg"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <a *ngFor="let doc of DocList | paginate: { itemsPerPage: 5, currentPage: Page }">
+        <div class="card mb-3 doc-card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-10 col-md-6">
+                <div class="row">
+                  <a routerLink="/doc-profile/{{doc.Id}}/{{doc.FacilityId}}">
+                    <img class="rounded-circle doc-img" width="120" height="120" src="{{doc.ImageUrl}}"
+                      (error)="doc.ImageUrl = 'assets/images/doctor.png'">
+
+                  </a>
+                  <div class="col-6 col-md-5">
+                    <ul class="list-unstyled">
+                      <li class="doc-list">
+                        <h2>
+                          <a routerLink="/doc-profile/{{doc.Id}}/{{doc.FacilityId}}" style="color:#FF5545">
+                            {{doc.Name}}
+
+                          </a>
+                        </h2>
+                      </li>
+                      <li class="doc-list">
+                        {{doc.Qualification}}, {{doc.Specialities[0].name}}
+                      </li>
+                      <li class="doc-list">
+                        {{doc.FacilityName}}
+                      </li>
+                      <li class="doc-list">
+                        {{doc.Area}}
+                      </li>
+                      <!-- <li class="doc-list">
+
+                        <i class="fas fa-star docicon"></i><i class="fas fa-star docicon"></i><i
+                          class="fas fa-star docicon"></i> <i class="far fa-star docicon"></i><i
+                          class="far fa-star docicon"></i>
+                      </li> -->
+
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-1 d-block d-sm-none">
+                <a id="favo" (click)='toggleFav(doc.Id , doc.FacilityId , doc.Specialities[0].Id , doc.IsFav)'>
                   <h3>
-                    <ng-template [ngIf]="!favo_flag">
+                    <ng-template [ngIf]="!doc.IsFav">
                       <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
                     </ng-template>
-                    <ng-template [ngIf]="favo_flag">
+                    <ng-template [ngIf]="doc.IsFav">
                       <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
                     </ng-template>
                   </h3>
                 </a>
-            </div>
-            
-            <div class="col-md-5 d-none d-sm-block" id="schedule">
+              </div>
+
+              <div class="col-md-5 d-none d-sm-block schedule" *ngIf="doc.DoctorTypeId == '3'">
                 <div class="row">
                   <div class="col-md-1"></div>
                   <div class="col-8 col-md-10">
@@ -306,94 +358,41 @@
                         <div class="d-block w-100" style="width:100%">
                           <div class="row">
                             <div class="col-4 col-md-4 ">
-                              <div id="headcard" style="width:100%">
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
+                              <div class="headcard" style="width:100%">
+                                <a routerLink="/doc-profile/{{slot.DoctorId}}/{{doc.FacilityId}}/{{slot.SlotId}}/{{SlotDate}}"
+                                  *ngFor="let slot of doc.GetDoctorSlots">
+                                  <div class="headinfo"
+                                    *ngIf="slot.Date.substring(0,4) == SlotDate.getFullYear() && slot.Date.substring(6,7) == (SlotDate.getMonth()+1) &&  slot.Date.substring(8,10) == SlotDate.getDate()">
+                                    {{slot.From.substring(11,16)}}
+                                  </div>
                                 </a>
 
                               </div>
 
 
                             </div>
+
                             <div class="col-4 col-md-4 ">
-                              <div id="headcard" style="width:100%">
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
+                              <div class="headcard" style="width:100%">
+                                <a routerLink="/doc-profile/{{slot.DoctorId}}/{{doc.FacilityId}}/{{slot.SlotId}}/{{SlotDate2}}"
+                                  *ngFor="let slot of doc.GetDoctorSlots">
+                                  <div class="headinfo"
+                                    *ngIf="slot.Date.substring(0,4) == SlotDate2.getFullYear() && slot.Date.substring(6,7) == (SlotDate2.getMonth()+1) &&  slot.Date.substring(8,10) == SlotDate2.getDate()">
+                                    {{slot.From.substring(11,16)}}</div>
                                 </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-
                               </div>
 
 
                             </div>
+
                             <div class="col-4 col-md-4 ">
-                              <div id="headcard" style="width:100%">
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
+                              <div class="headcard" style="width:100%">
+                                <a routerLink="/doc-profile/{{slot.DoctorId}}/{{doc.FacilityId}}/{{slot.SlotId}}/{{SlotDate3}}"
+                                  *ngFor="let slot of doc.GetDoctorSlots">
+                                  <div class="headinfo"
+                                    *ngIf="slot.Date.substring(0,4) == SlotDate3.getFullYear() && slot.Date.substring(6,7) == (SlotDate3.getMonth()+1) &&  slot.Date.substring(8,10) == SlotDate3.getDate()">
+                                    {{slot.From.substring(11,16)}}</div>
                                 </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00</div>
-                                </a>
-
                               </div>
 
 
@@ -410,1125 +409,113 @@
                     </div>
 
                   </div>
-                  
-                </div>
-            </div>
-
-            <div class="col-12 d-block d-sm-none" id="schedule">
-              <div class="row">
-                <div class="col-12">
-                      <div class="d-block w-100">
-                        <div class="row">
-                          <div class="col-12 col-md-4 ">
-                            <div id="headcard">
-                              <a routerLink="/doc-profile">
-                                <div id="headinfo">9:00 pm</div>
-                              </a>
-                              <a routerLink="/doc-profile">
-                                <div id="headinfo">9:30 pm</div>
-                              </a>
-                              <a routerLink="/doc-profile">
-                                <div id="headinfo">9:35 pm</div>
-                              </a>
-                              <a routerLink="/doc-profile">
-                                <div id="headinfo">9:40 pm</div>
-                              </a>
-                              <a routerLink="/doc-profile">
-                                <div id="headinfo">9:00 pm</div>
-                              </a>
-                              <a routerLink="/doc-profile">
-                                <div id="headinfo">9:00 pm</div>
-                              </a>
-                              <a routerLink="/doc-profile">
-                                <div id="headinfo">9:00 pm</div>
-                              </a>
-                              <a routerLink="/doc-profile">
-                                <div id="headinfo">9:50 pm</div>
-                              </a>
-                              <a routerLink="/doc-profile">
-                                <div id="headinfo">9:50 pm</div>
-                              </a>
-                              <a routerLink="/doc-profile">
-                                <div id="headinfo">9:50 pm</div>
-                              </a>
-
-                            </div>
-
-
-                          </div>
-                      
-
-                        </div>
-                      </div>
-                  </div>
 
                 </div>
-                
-              </div>
-
-
-            <div class="col-md-1 d-none d-sm-block">
-              <a id="favo" (click)='toggle()'>
-                <h3>
-                  <ng-template [ngIf]="!favo_flag">
-                    <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                  </ng-template>
-                  <ng-template [ngIf]="favo_flag">
-                    <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                  </ng-template>
-                </h3>
-              </a>
-            </div>
-
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-5">
-                  <p class="d-none d-md-block"><i class="fas fa-phone fa-lg" id="docicon"></i>&nbsp; 012345678921
-                  </p>
-                </div>
-
-                <div class="col-md-5">
-                  <p class="d-none d-md-block"><i class="fas fa-envelope fa-lg" id="docicon"></i>&nbsp; Send message</p>
-                </div>
-
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <a routerLink="/doc-profile">
-
-      <div class="card mb-3 doc-card" id="doc-card2">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-10 col-md-6">
-                <div class="row">
-                  <img class="rounded-circle" id="doc-img" width="120" height="120" src="assets/images/Medical_Professional_stock.png">
-                  <div class="col-6 col-md-5">
-                    <ul class="list-unstyled">
-                      <li id="doc-list" style="color:#FF5545">
-                        <h2>
-                            Doctor Name
-                        </h2>
-                      </li>
-                      <li id="doc-list">
-                        Specialty
-                      </li>
-                      <li id="doc-list">
-                        Clinic Name
-                      </li>
-                      <li id="doc-list">
-                        Zamalek, Cairo
-                      </li>
-                      <li id="doc-list">
-                        <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                          id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                      </li>
-  
-  
-                    </ul>
-  
-                  </div>
-  
-                </div>
-  
-              </div>
-              <div class="col-1 d-block d-sm-none">
-                  <a id="favo" (click)='toggle1()'>
-                    <h3>
-                      <ng-template [ngIf]="!favo_flag1">
-                        <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                      </ng-template>
-                      <ng-template [ngIf]="favo_flag1">
-                        <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                      </ng-template>
-                    </h3>
-                  </a>
-                </div>
-                
-              <div class="col-md-5 d-none d-sm-block" id="schedule">
-                  <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-8 col-md-10">
-                      <div class="carousel-inner" style="height:100%">
-  
-                        <div class="carousel-item active">
-                          <div class="d-block w-100" style="width:100%">
-                            <div class="row">
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-  
-                            </div>
-                          </div>
-  
-  
-  
-  
-                        </div>
-                        <div class="carousel-item">
-                          <div class="d-block w-100" style="width:100%">
-                            <div class="row">
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-  
-                            </div>
-                          </div>
-  
-  
-  
-                        </div>
-                        <div class="carousel-item">
-                          <div class="d-block w-100" style="width:100%">
-                            <div class="row">
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-  
-                            </div>
-                          </div>
-  
-  
-  
-                        </div>
-  
-  
-                      </div>
-  
-                    </div>
-                    
-                  </div>
-              </div>
-  
-              <div class="col-12 d-block d-sm-none" id="schedule">
-                <div class="row">
-                  <div class="col-12">
-                        <div class="d-block w-100">
-                          <div class="row">
-                            <div class="col-12 col-md-4 ">
-                              <div id="headcard">
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:30 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:35 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:40 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:50 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:50 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:50 pm</div>
-                                </a>
-  
-                              </div>
-  
-  
-                            </div>
-                        
-  
-                          </div>
-                        </div>
-                    </div>
-  
-                  </div>
-                  
-                </div>
-  
-  
-              <div class="col-md-1 d-none d-sm-block">
-                <a id="favo" (click)='toggle1()'>
-                  <h3>
-                    <ng-template [ngIf]="!favo_flag1">
-                      <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                    </ng-template>
-                    <ng-template [ngIf]="favo_flag1">
-                      <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                    </ng-template>
-                  </h3>
-                </a>
-              </div>
-
-              <div class="col-md-6">
-                <div class="row">
-                  <div class="col-md-5">
-                    <p class="d-none d-md-block"><i class="fas fa-phone fa-lg" id="docicon"></i>&nbsp; 012345678921
-                    </p>
-                  </div>
-  
-                  <div class="col-md-5">
-                    <p class="d-none d-md-block"><i class="fas fa-envelope fa-lg" id="docicon"></i>&nbsp; Send message</p>
-                  </div>
-  
-                </div>
-              </div>
-  
-  
-            </div>
-          </div>
-      </div>
-      </a>  
-
-      <a routerLink="/doc-profile">
-
-
-      <div class="card mb-3 doc-card" id="doc-card3">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-10 col-md-6">
-                <div class="row">
-                  <img class="rounded-circle" id="doc-img" width="120" height="120" src="assets/images/Medical_Professional_stock.png">
-                  <div class="col-6 col-md-5">
-                    <ul class="list-unstyled">
-                      <li id="doc-list" style="color:#FF5545">
-                        <h2>
-                            Doctor Name
-                        </h2>
-                      </li>
-                      <li id="doc-list">
-                        Specialty
-                      </li>
-                      <li id="doc-list">
-                        Clinic Name
-                      </li>
-                      <li id="doc-list">
-                        Zamalek, Cairo
-                      </li>
-                      <li id="doc-list">
-                        <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                          id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                      </li>
-  
-  
-                    </ul>
-  
-                  </div>
-  
-                </div>
-  
-              </div>
-              <div class="col-1 d-block d-sm-none">
-                  <a id="favo" (click)='toggle1()'>
-                    <h3>
-                      <ng-template [ngIf]="!favo_flag1">
-                        <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                      </ng-template>
-                      <ng-template [ngIf]="favo_flag1">
-                        <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                      </ng-template>
-                    </h3>
-                  </a>
-                </div>
-                
-              <div class="col-md-5 d-none d-sm-block" id="schedule">
-                  <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-8 col-md-10">
-                      <div class="carousel-inner" style="height:100%">
-  
-                        <div class="carousel-item active">
-                          <div class="d-block w-100" style="width:100%">
-                            <div class="row">
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-  
-                            </div>
-                          </div>
-  
-  
-  
-  
-                        </div>
-                        <div class="carousel-item">
-                          <div class="d-block w-100" style="width:100%">
-                            <div class="row">
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-  
-                            </div>
-                          </div>
-  
-  
-  
-                        </div>
-                        <div class="carousel-item">
-                          <div class="d-block w-100" style="width:100%">
-                            <div class="row">
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-                              <div class="col-4 col-md-4 ">
-                                <div id="headcard" style="width:100%">
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-                                  <a routerLink="/doc-profile">
-                                    <div id="headinfo">9:00</div>
-                                  </a>
-  
-                                </div>
-  
-  
-                              </div>
-  
-                            </div>
-                          </div>
-  
-  
-  
-                        </div>
-  
-  
-                      </div>
-  
-                    </div>
-                    
-                  </div>
-              </div>
-  
-              <div class="col-12 d-block d-sm-none" id="schedule">
-                <div class="row">
-                  <div class="col-12">
-                        <div class="d-block w-100">
-                          <div class="row">
-                            <div class="col-12 col-md-4 ">
-                              <div id="headcard">
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:30 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:35 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:40 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:00 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:50 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:50 pm</div>
-                                </a>
-                                <a routerLink="/doc-profile">
-                                  <div id="headinfo">9:50 pm</div>
-                                </a>
-  
-                              </div>
-  
-  
-                            </div>
-                        
-  
-                          </div>
-                        </div>
-                    </div>
-  
-                  </div>
-                  
-                </div>
-  
-  
-              <div class="col-md-1 d-none d-sm-block">
-                <a id="favo" (click)='toggle2()'>
-                  <h3>
-                    <ng-template [ngIf]="!favo_flag2">
-                      <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                    </ng-template>
-                    <ng-template [ngIf]="favo_flag2">
-                      <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                    </ng-template>
-                  </h3>
-                </a>
-              </div>
-              <div class="col-md-6">
-                <div class="row">
-                  <div class="col-md-5">
-                    <p class="d-none d-md-block"><i class="fas fa-phone fa-lg" id="docicon"></i>&nbsp; 012345678921
-                    </p>
-                  </div>
-  
-                  <div class="col-md-5">
-                    <p class="d-none d-md-block"><i class="fas fa-envelope fa-lg" id="docicon"></i>&nbsp; Send message</p>
-                  </div>
-  
-                </div>
-              </div>
-  
-  
-            </div>
-          </div>
-        </div>
-        </a>
-
-        <a routerLink="/doc-profile">
-
-      <div class="card mb-3 doc-card" id="doc-card4">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-10 col-md-6">
-              <div class="row">
-                <img class="rounded-circle" id="doc-img" width="120" height="120" src="assets/images/Medical_Professional_stock.png">
-                <div class="col-6 col-md-5">
-                  <ul class="list-unstyled">
-                    <li id="doc-list" style="color:#FF5545">
-                      
-                      <h2>Doctor Name</h2>
-                    </li>
-                    <li id="doc-list">
-                      Specialty
-                    </li>
-                    <li id="doc-list">
-                      Clinic Name
-                    </li>
-                    <li id="doc-list">
-                      Zamalek, Cairo
-                    </li>
-                    <li id="doc-list">
-                      <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                        id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                    </li>
-
-
-                  </ul>
-
-                </div>
-
-              </div>
-
-            </div>
-            <div class="col-1 d-block d-sm-none">
-                <a id="favo" (click)='toggle1()'>
-                  <h3>
-                    <ng-template [ngIf]="!favo_flag1">
-                      <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                    </ng-template>
-                    <ng-template [ngIf]="favo_flag1">
-                      <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                    </ng-template>
-                  </h3>
-                </a>
-              </div>
-              
-            <div class="col-md-5">
-              <a routerLink='/doc-profile2'>
-                <button id="buttonsintro">
-                  <h5>Request Appoinetment</h5>
+                <button class="buttonsintro" *ngIf="!doc.GetDoctorSlots.length">
+                  <h5 class="text-center">
+                    Next Available Time At {{doc.NextDateTime | date}}
+                  </h5>
                 </button>
-              </a>
-            </div>
-            <div class="col-md-1 d-none d-sm-block">
-              <a id="favo" (click)='toggle3()'>
-                <h3>
-                  <ng-template [ngIf]="!favo_flag3">
-                    <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                  </ng-template>
-                  <ng-template [ngIf]="favo_flag3">
-                    <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
-                  </ng-template>
-                </h3>
-              </a>
-            </div>
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-5">
-                  <p class="d-none d-md-block"><i class="fas fa-phone fa-lg" id="docicon"></i>&nbsp; 012345678921
-                  </p>
-                </div>
+              </div>
 
-                <div class="col-md-5">
-                  <p class="d-none d-md-block"><i class="fas fa-envelope fa-lg" id="docicon"></i>&nbsp; Send message</p>
+              <div class="col-12 d-block d-sm-none schedule" *ngIf="doc.DoctorTypeId == '3'">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="d-block w-100">
+                      <div class="row">
+                        <div class="col-12 col-md-4 ">
+                          <div class="headcard">
+                            <a routerLink="/doc-profile/{{slot.DoctorId}}/{{doc.FacilityId}}/{{slot.SlotId}}/{{SlotDate}}"
+                              *ngFor="let slot of doc.GetDoctorSlots">
+                              <div class="headinfo"
+                                *ngIf="slot.Date.substring(0,4) == SlotDate.getFullYear() && slot.Date.substring(6,7) == (SlotDate.getMonth()+1) &&  slot.Date.substring(8,10) == SlotDate.getDate()">
+                                {{slot.From.substring(11,16)}}</div>
+                            </a>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+
+                  </div>
+
                 </div>
 
               </div>
+
+              <div class="col-12 d-block d-sm-none" *ngIf="doc.DoctorTypeId == '3'">
+                <button class="buttonsintro" *ngIf="!doc.GetDoctorSlots.length">
+                  <h5 class="text-center">
+                    Next Available Time At {{doc.NextDateTime | date}}
+                  </h5>
+                </button>
+              </div>
+
+              <div class="col-12 col-md-5" *ngIf="doc.DoctorTypeId == '1'">
+                <a routerLink="/doc-profile/{{doc.Id}}/{{doc.FacilityId}}">
+                  <button class="buttonsintro">
+                    <h5>Request Appointment </h5>
+                  </button>
+
+                </a>
+              </div>
+
+              <div class="col-12 col-md-5" *ngIf="doc.DoctorTypeId == '2'">
+                <a>
+                  <button class="buttonsintro" (click)="copyPhoneNumber(doc.PhoneNumber)">
+                    <h5>Call For Appointment </h5>
+                  </button>
+
+                </a>
+              </div>
+
+              <div class="col-md-1 d-none d-sm-block">
+                <a id="favo" (click)='toggleFav(doc.Id , doc.FacilityId , doc.Specialities[0].Id , doc.IsFav)'>
+                  <h3>
+                    <ng-template [ngIf]="!doc.IsFav">
+                      <i class="far fa-heart fa-lg pull-right" style="color:#FF5545"></i>
+                    </ng-template>
+                    <ng-template [ngIf]="doc.IsFav">
+                      <i class="fas fa-heart fa-lg pull-right" style="color:#FF5545"></i>
+                    </ng-template>
+
+                  </h3>
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-5">
+                    <p class="d-none d-md-block"><i [ngClass]="doc.PhoneNumber ?  'fas fa-phone fa-lg docicon' : 'fas fa-phone fa-lg docicon-out'"></i>&nbsp; {{doc.PhoneNumber}}
+                    </p>
+                  </div>
+
+                  <div class="col-md-5">
+                    <p class="d-none d-md-block"><i class="fas fa-envelope fa-lg docicon"></i>&nbsp; Send message
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+
             </div>
-
-
           </div>
         </div>
-      </div>
       </a>
+      <h2 class="text-center notfound" *ngIf="NotFound"> No results found matching your search criteria</h2>
+      <h5 class="text-center">
+        <img src="assets/images/loading-icon.gif" id="loading">
 
-      <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      </h5>
+
+      <h2 class="text-center">
+        <pagination-controls (pageChange)="Page = $event" (click)="Top()" directionLinks="true" autoHide="true"
+          responsive="true"></pagination-controls>
+
+      </h2>
+
     </div>
 
 
@@ -1538,155 +525,152 @@
 
 <!-- Modal -->
 <div class="modal fade" id="filter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="card-body">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card-body">
 
-                <div id="specialty " class="filterdiv">
-                  <div id="filterhead">
-                    <h6 class="card-title"><i class="fas fa-stethoscope"></i> Specialty</h6>
-                    <hr>
-      
-                  </div>
-      
-                  <div id="filtercontent">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">specialty 1</label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox2">specialty 2</label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox3">specialty 3</label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox4">specialty 4</label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox5">specialty 5</label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox6">specialty 6</label>
-                    </div>
-      
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox7">specialty 7</label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox7">specialty 8</label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox7">specialty 9</label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox7">specialty 10</label>
-                    </div>
-      
-                  </div>
-      
-                </div>
-                <div id="gender" class="filterdiv">
-                  <div id="filterhead">
-                    <h6 class="card-title"><i class="fas fa-venus-mars"></i> Gender</h6>
-                    <hr>
-                  </div>
-      
-                  <div id="filtercontent">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox10">Male </label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox11">Female</label>
-                    </div>
-                  </div>
-                </div>
-                <div id="rated" class="filterdiv">
-                  <div id="filterhead">
-                    <h6 class="card-title"><i class="fas fa-star" id="docicon"></i> Rate</h6>
-                    <hr>
-                  </div>
-      
-                  <div id="filtercontent">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox12" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox12"><i class="fas fa-star" id="docicon"></i>
-                      </label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox13" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox13"><i class="fas fa-star" id="docicon"></i><i id="docicon"
-                          class="fas fa-star"></i></label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox14" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox14"><i id="docicon" class="fas fa-star"></i><i id="docicon"
-                          class="fas fa-star"></i><i id="docicon" class="fas fa-star"></i></label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox15" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox15"><i id="docicon" class="fas fa-star"></i><i id="docicon"
-                          class="fas fa-star"></i><i id="docicon" class="fas fa-star"></i> <i id="docicon" class="fas fa-star"></i></label>
-                    </div>
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox16" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox16"><i id="docicon" class="fas fa-star"></i><i id="docicon"
-                          class="fas fa-star"></i><i id="docicon" class="fas fa-star"></i> <i id="docicon" class="fas fa-star"></i>
-                        <i id="docicon" class="fas fa-star"></i></label>
-                    </div>
-      
-      
-                  </div>
-                </div>
-                <div id="fees" class="filterdiv">
-                  <div id="filterhead">
-                    <h6 class="card-title"><i class="fas fa-money-bill-alt"></i> Fees</h6>
-                    <hr>
-                  </div>
-      
-                  <div id="filtercontent">
-                    <div class="form-group">
-                      <div class="row" id="rangevalues">
-                        <div class="col-3 col-md-3">50</div>
-                        <div class="col-3 col-md-3">100</div>
-                        <div class="col-3 col-md-3">200</div>
-                        <div class="col-3 col-md-3">300</div>
-                        <div class="col-3 col-md-3">400</div>
-      
-                      </div>
-                      <input type="range" class="form-control-range" id="formControlRange" min="1" max="5" steps="1" value="1"
-                        list="feestracks">
-      
-      
-                    </div>
-                  </div>
-                </div>
-      
-      
+          <div id="specialty " class="filterdiv">
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-stethoscope"></i> All Qualifications</h6>
+                <hr>
+
               </div>
+
+              <div class="filtercontent">
+                <div class="form-check" *ngFor="let qual of AllQuals">
+                  <input class="form-check-input" type="radio" id="inlineCheckbox{{qual.Id}}" value="{{qual.Id}}"
+                    [(ngModel)]="QualificationId" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="inlineCheckbox{{qual.Id}}">{{qual.name}}</label>
+                </div>
+
+              </div>
+            </form>
+          </div>
+          <div id="gender" class="filterdiv">
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-venus-mars"></i> Gender</h6>
+                <hr>
+              </div>
+
+              <div class="filtercontent">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="male" value="true" [(ngModel)]="gender"
+                    [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="male">Male </label>
+                </div>
+                <div class="form-check ">
+                  <input class="form-check-input" type="radio" id="Female" value="false" [(ngModel)]="gender"
+                    [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="Female">Female</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div id="rated" class="filterdiv">
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-star" id="docicon"></i> Nationalities</h6>
+                <hr>
+              </div>
+
+              <div class="filtercontent">
+                <div class="form-check" *ngFor="let nat of AllNats">
+                  <input class="form-check-input" type="radio" id="nat{{nat.Id}}" value="{{nat.Id}}"
+                    [(ngModel)]="NationalityId" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="nat{{nat.Id}}">
+                    {{nat.name}}
+                  </label>
+                </div>
+
+
+              </div>
+
+            </form>
+
+          </div>
+          <div id="Areas" class="filterdiv">
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-star" id="docicon"></i> Areas</h6>
+                <hr>
+              </div>
+
+              <div class="filtercontent">
+                <div class="form-check" *ngFor="let area of Areas">
+                  <input class="form-check-input" type="radio" id="area{{area.Id}}" value="{{area.Id}}"
+                    [(ngModel)]="AreaId" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="area{{area.Id}}">
+                    {{area.name}}
+                  </label>
+                </div>
+
+
+              </div>
+
+            </form>
+
+          </div>
+          <div id="Langs" class="filterdiv">
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-star" id="docicon"></i> Languages</h6>
+                <hr>
+              </div>
+
+              <div class="filtercontent">
+                <div class="form-check" *ngFor="let lang of AllLangs">
+                  <input class="form-check-input" type="radio" id="lang{{lang.Id}}" value="{{lang.Id}}"
+                    [(ngModel)]="LangID" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="lang{{lang.Id}}">
+                    {{lang.name}}
+                  </label>
+                </div>
+
+
+              </div>
+
+            </form>
+
+          </div>
+          <div id="Comps" class="filterdiv">
+            <form>
+              <div class="filterhead">
+                <h6 class="card-title"><i class="fas fa-star" id="docicon"></i> Insurance</h6>
+                <hr>
+              </div>
+
+              <div class="filtercontent">
+                <div class="form-check" *ngFor="let comp of Comps">
+                  <input class="form-check-input" type="radio" id="comp{{comp.Id}}" value="{{comp.Id}}"
+                    [(ngModel)]="InsuranceId" [ngModelOptions]="{standalone: true}">
+                  <label class="form-check-label" for="comp{{comp.Id}}">
+                    {{comp.Name}}
+                  </label>
+                </div>
+
+
+              </div>
+
+            </form>
+
+          </div>
+          <br>
+          <button class="buttonsintro" (click)="Filter()">Filter</button>
+
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-  
+</div>

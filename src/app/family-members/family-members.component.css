@@ -1,267 +1,369 @@
 @media screen and (max-width: 600px) {
-  #family{
+  #family {
     background-color: #dfdfdf;
     width: 100%;
     position: relative;
-    padding: 6% ; 
-    margin-top: 70px; 
+    padding: 6%;
+    margin-top: 70px;
   }
-  #doc-img{
-    border : 1px solid #FF5545;
+
+  .doc-img {
+    border: 1px solid #FF5545;
     width: 120px;
     height: 120px;
-  
+
   }
-  
-}
-@media screen and (min-width: 600px) {
-  #family{
-    background-color: #dfdfdf;
-    width: 100%;
-    position: relative;
-    padding: 1%
-  }
-  #doc-img{
-    border : 1px solid #FF5545;
-    width: 180px;
-    height: 180px;
-  
-  }
-  
-}
-  
-  #navlinks {
-    border-right: 1px solid #FF5545;
-    color: white;
-  }
-  
-  .landing {
-    padding: 2%
-  }
-  
-  .homebuttons {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 10px;
-  }
-  
-  .image {
-    width: 100%;
-    height: 100%;
-  }
-  
-  #introheadline {
-    margin: 0 auto;
-    text-align: center;
-    padding: 7%;
-    color: #fff;
-  }
-  
-  .intro {
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 6%;
-  }
-  
-  #dropdown {
-    background: transparent;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 3%;
-    width: 100%;
-    text-align: left;
-  }
-  
-  #buttonsintro {
-    border-radius: 5px;
-    width: 100%;
-    color: #fff;
-    padding: 2%;
-    background-color: #FF5545;
-    border: 1px solid #FF5545 ; 
+
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    bottom: 0px;
+    left: 45px;
     cursor: pointer;
+
   }
-  
-  #introfooter {
-    margin: 5%;
-  }
-  
-  #buttonheader {
-    border: 1px solid white;
-    border-radius: 8px;
-    background: transparent;
-    color: white;
-  }
-  
-  
-  ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #000000;
-    opacity: 1;
-    /* Firefox */
-  }
-  
-  
-  .shadow {
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-    border: 0;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  .myappointments-tabs{
-    background-color: transparent !important;
-  }
-  #myappointments-tabs{
-    background-color: #fff ; 
-    border-radius: 5px;
-    margin-top: 1%;
-  
-  }
-  #doccontent {
-    color: #FF5545;
-  }
-  #doc-name {
-    color: #FF5545;
-    font-size: 20px;
-  }
-  #list-info{
-    padding-bottom:5%; 
-  }
-  
-  #list-info-right{
-    padding-top:30%; 
-  }
-  
-  #myappoinments{
-    background-color:#ededed;
-    width: 100%;
-    position: relative;
-    padding: 3%
-  }
-  
-  
-  #sec-head{
-    color: #FF5545;
-    text-align: center;
-    padding: 1%;
-  }
-  #sec-content{
-    padding: 3% ; 
-  
-  }
-  .circle {
-    background:transparent;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid #FF5545;
-    margin-right: -25%;
-  }
-  .circle-form {
-    background:transparent;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 1px solid #FF5545;
-  }
-  
-  #inputform {
-    border-bottom: 1px solid #000000;
-    border-top: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    color: #000000;
-    width: 100%;
-    padding: 1%;
-  }
-  
-  #dropdownform {
-    border-bottom: 1px solid #bdbdbd;
-    border-top: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    color: #000000;
-    width: 100%;
-    padding: 1%;
-  
-  }
-  
-  
-  
-  #profile-icons {
-    margin-left: 30%;
-    margin-top: 25%;
-    color: #FF5545;
-  }
-  #dropdowntab{
-    color: #FF5545 ; 
-    border: 1px solid #FF5545;
-  }
-  #family{
+}
+
+@media screen and (min-width: 600px) {
+  #family {
     background-color: #dfdfdf;
     width: 100%;
     position: relative;
     padding: 1%
   }
 
-  #family-card:hover{
-    background-color: #dddd;
+  .doc-img {
     border: 1px solid #FF5545;
+    width: 120px;
+    height: 120px;
+
   }
-  
-  
-  #blogs-head{
-    color: #fff ; 
-    background-color: #FF5545;
-    border-radius: 5px;
-    
+
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    bottom: 0px;
+    left: 70px;
+    cursor: pointer;
+
   }
-  
-  #docicon{
-    color: #FF5545;
-  }
-  #headtime{
-    color: #FF5545;
-    background-color: #FF5545;
-    font-size: 12px;
-  
-    
-  }
-  #headinfo{
-    color:#FF5545 !important; 
-    background-color: #d8d6d6;
-    align-self: center;
-    font-size: 14px;
-  }
-  
-  #headcard{
-   
-  overflow: auto ; 
-  max-height: 50% ; 
-  
-  }
-  #sliderbtn{
-  color: #FF5545 ; 
+}
+
+#navlinks {
+  border-right: 1px solid #FF5545;
+  color: white;
+}
+
+.landing {
+  padding: 2%
+}
+
+.homebuttons {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+#introheadline {
+  margin: 0 auto;
+  text-align: center;
+  padding: 7%;
+  color: #fff;
+}
+
+.intro {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 6%;
+}
+
+#dropdown {
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 3%;
+  width: 100%;
+  text-align: left;
+}
+
+.buttonsintro {
+  border-radius: 5px;
+  width: 100%;
+  color: #fff;
+  padding: 2%;
+  background-color: #FF5545;
+  border: 1px solid #FF5545;
+  cursor: pointer;
+}
+
+#introfooter {
+  margin: 5%;
+}
+
+#buttonheader {
+  border: 1px solid white;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+}
+
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #000000;
+  opacity: 1;
+  /* Firefox */
+}
+
+
+.shadow {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  border: 0;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.myappointments-tabs {
+  background-color: transparent !important;
+}
+
+#myappointments-tabs {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 1%;
+
+}
+
+.doccontent {
+  color: #FF5545;
+}
+
+#doc-name {
+  color: #FF5545;
+  font-size: 20px;
+}
+
+#list-info {
+  padding-bottom: 5%;
+}
+
+#list-info-right {
+  padding-top: 30%;
+}
+
+#myappoinments {
+  background-color: #ededed;
+  width: 100%;
+  position: relative;
+  padding: 3%
+}
+
+
+#sec-head {
+  color: #FF5545;
+  text-align: center;
+  padding: 1%;
+}
+
+#sec-content {
+  padding: 3%;
+
+}
+
+.circle {
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #FF5545;
+  margin-right: -25%;
+}
+
+.circle-form {
+  background: transparent;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #FF5545;
+}
+
+.inputform {
+  border-bottom: 1px solid #000000;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  color: #000000;
+  width: 100%;
+  padding: 1%;
+}
+
+.dropdownform {
+  border-bottom: 1px solid #000000;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  color: #000000;
+  width: 100%;
+  padding: 1%;
+
+}
+
+
+
+#profile-icons {
+  margin-left: 30%;
+  margin-top: 25%;
+  color: #FF5545;
+}
+
+#dropdowntab {
+  color: #FF5545;
+  border: 1px solid #FF5545;
+}
+
+#family {
+  background-color: #dfdfdf;
+  width: 100%;
+  position: relative;
+  padding: 1%
+}
+
+.family-card:hover {
+  background-color: #dddd;
+  border: 1px solid #FF5545;
+}
+
+
+#blogs-head {
+  color: #fff;
+  background-color: #FF5545;
+  border-radius: 5px;
+
+}
+
+#docicon {
+  color: #FF5545;
+}
+
+#headtime {
+  color: #FF5545;
+  background-color: #FF5545;
+  font-size: 12px;
+
+
+}
+
+#headinfo {
+  color: #FF5545 !important;
+  background-color: #d8d6d6;
+  align-self: center;
+  font-size: 14px;
+}
+
+#headcard {
+
+  overflow: auto;
+  max-height: 50%;
+
+}
+
+#sliderbtn {
+  color: #FF5545;
   width: 20px;
   height: 150px;
-  }
-  
-  ::-webkit-scrollbar { 
-  display: none; 
-  }
-  #blog-title{
-    padding: 1%; 
-    color: #FF5545 ; 
-    max-width: 80%;
-  }
-  #blog-desc{
-    padding: 1%;
-    color: #FF5545;
-  }
-  
-  
-  
-  
-  
-  
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.blog-title {
+  padding: 1%;
+  color: #FF5545;
+  max-width: 80%;
+}
+
+.blog-desc {
+  padding: 1%;
+  color: #FF5545;
+}
+
+
+
+
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+
+.profile-image-container {
+  width: 150px;
+  height: 170px;
+  margin: 0 auto 0 auto;
+  position: relative;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 100%;
+  border: 5px solid #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+  margin: 20px auto 0px auto;
+}
+
+.profile-image img {
+  width: 100%;
+}
+
+.upload-btn {
+  color: white;
+  background-color: white;
+  border: 1px solid #FF5545;
+  border-radius: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+
+}
+
+.images-list {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  display: inline-block;
+  margin: 5px 5px 0 0;
+}
+
+.uploaded-images-thumb {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+}
+.icons {
+  color: #FF5545;
+}

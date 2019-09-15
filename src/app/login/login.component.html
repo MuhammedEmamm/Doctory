@@ -1,91 +1,106 @@
-
-  <section id="login">
-      <div class="row">
-         <div class="col-lg-4 col-md-2"></div>
-         <div class="col-lg-4 col-md-8">
-          <div class="card-header text-center" id="doclist-head"><h4>Login</h4></div>
-          <div class="card mb-3" id="login-div">
-            <div class="card-body" >
-              <h3 class="text-center">
-                              <img src="assets/images/login-logo.png">
-              </h3>
-              <form id="login-form">
-                <div class="row">
-                  
-                  <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-1">
-                          <h3 class="text-center">
-                              <i class="fas fa-envelope fa-lg" id="icons"></i>
-
-                          </h3>
-                        </div>
-                        <div class="col-md-10">
-                            <input type="email" placeholder="E-mail" class="input-form">
-                            <hr>
-
-                        </div>
-                        
-                    </div>
-                    
-
-                  </div>
-                  
-
-
-                </div>  
-
-                <br>
-                
-                <div class="row">
-                  
-                  <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-1">
-                          <h3 class="text-center">
-                              <i class="fas fa-lock fa-lg" id="icons"></i>
-                          </h3>
-                        </div>
-                        <div class="col-md-10">
-                            <input type="password" placeholder="Password" class="input-form">
-                            <hr>
-
-                        </div>
-                        
-                    </div>
-                  </div>
-
-
-                </div>  
-                <div class="row">
-                  <div class="col-md-4"></div>
-                  
-                  <div class="col-md-2"></div>
-  
-                  <div class="col-md-6">
-                    <a id="icons"><u><h5>Forget Password</h5></u></a>
-                  </div>
-  
-  
-                  </div>  
-                  <br>
-                  <br>
-                  <button class="buttonsintro"><h5 style="margin-top:10px"><b>SIGN IN</b></h5></button>
-                  <br>
-                  <br>
-                  
-                  <button class="buttonsintrofb"><h5 style="margin-top:10px"><b><i class="fab fa-facebook-f fa-lg"></i>&nbsp;&nbsp;&nbsp;SIGN IN WITH FACEBOOK</b></h5></button>
-
-                  <br>
-                  <br>
-                  
-              </form>
-              
-            </div>
-          </div>
-          
-         </div>
-         
+<section id="login">
+  <div class="row">
+    <div class="col-lg-4 col-md-2"></div>
+    <div class="col-lg-4 col-md-8">
+      <div class="card-header text-center" id="doclist-head">
+        <h4>Login</h4>
       </div>
-  </section>
+      <div class="card mb-3" id="login-div">
+        <div class="card-body">
+          <h3 class="text-center">
+            <img src="assets/images/login_logo.png" style="height:80% ; width:80%">
+          </h3>
+          <form id="login-form" [formGroup]="LoginForm" (ngSubmit)="SignInform()">
+            <div class="row">
 
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-1">
+                    <h3 class="text-center">
+                      <i class="fas fa-envelope fa-lg icons"></i>
+
+                    </h3>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="email" placeholder="E-mail" class="input-form" formControlName="Email"
+                      [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
+                    <hr>
+                    <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                      <div *ngIf="f.Email.errors.required">Email is required</div>
+                      <div *ngIf="f.Email.errors.email">Email must be a valid email address</div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+              </div>
+
+
+
+            </div>
+            <br>
+            <div class="row">
+
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-1">
+                    <h3 class="text-center">
+                      <i class="fas fa-lock fa-lg icons"></i>
+                    </h3>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="password" placeholder="Password" class="input-form" formControlName="Password"
+                      [ngClass]="{ 'is-invalid': submitted && f.Password.errors }">
+                    <hr>
+                    <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                      <div *ngIf="f.Password.errors.required"> Password is required</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+            </div>
+            <div class="row">
+              <div class="col-md-4"></div>
+
+              <div class="col-md-2"></div>
+
+              <div class="col-md-6">
+                <a routerLink="/forget-password" class="icons"><u>
+                    <h5>Forget Password</h5>
+                  </u></a>
+              </div>
+
+
+            </div>
+            <br>
+            <br>
+            <button class="buttonsintro" type="submit" *ngIf="!Loading">
+              <h5 style="margin-top:10px"><b>SIGN IN</b></h5>
+            </button>
+            <h5 class="text-center">
+              <img src="assets/images/loading-icon.gif" id="loading">
+
+            </h5>
+            
+            <br>
+            <br>
+            <button class="buttonsintrofb">
+              <h5 style="margin-top:10px"><b><i class="fab fa-facebook-f fa-lg"></i>&nbsp;&nbsp;&nbsp;SIGN IN WITH
+                  FACEBOOK</b></h5>
+            </button>
+            <br>
+            <br>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -7,6 +7,26 @@
     padding: 1% ; 
     margin-top: 70px; 
   }
+  
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    bottom: 0px;
+    left: 45px;
+    cursor: pointer;
+
+  }
+
+  .doc-img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-top: 15%;
+    border: 1px solid #FF5545;
+
+  }
+
 }
 @media screen and (min-width: 800px) {
   #myprofile{
@@ -15,6 +35,24 @@
     height: 100%;
     position: relative;
     padding: 1%
+  }
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    bottom: 0px;
+    left: 70px;
+    cursor: pointer;
+
+  }
+
+  .doc-img {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin-top: 15%;
+    border: 1px solid #FF5545;
+
   }
 }
 .wrapper {
@@ -79,7 +117,7 @@
     text-align: left;
   }
   
-  #buttonsintro {
+  .buttonsintro {
     border-radius: 5px;
     width: 100%;
     color: #fff;
@@ -168,6 +206,7 @@
     height: 100px;
     border-radius: 50%;
     margin-top: 25% ; 
+    border: 1px solid #FF5545
   }
   .photo{
     width: 100%;
@@ -190,7 +229,7 @@
     border-radius: 50%;
     border: 1px solid #FF5545;
   }
-  #inputform {
+  .inputform {
     border-bottom: 1px solid #bbbbbb;
     border-top: 2px solid #ffffff;
     border-right: 2px solid #ffffff;
@@ -199,12 +238,12 @@
     width: 100%;
     padding: 1%;
   }
-  #dropdownform {
+  .dropdownform {
     border-bottom: 1px solid #FF5545;
     border-top: 2px solid #ffffff;
     border-right: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
-    color: #bbbbbb;
+    color: #000;
     width: 100%;
     padding: 1%;
   
@@ -232,7 +271,7 @@
     height: 150px;
   
   }
-  #docicon{
+  .docicon{
     color: #FF5545;
   }
   #headtime{
@@ -273,11 +312,67 @@
     padding: 3.5%;
     color: #FF5545;
   }
-  #form-head{
+  .form-head{
     color: #FF5545
   }
   
   
+.profile-image-container {
+  width: 150px;
+  height: 170px;
+  margin: 0 auto 0 auto;
+  position: relative;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 100%;
+  border: 5px solid #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+  margin: 20px auto 0px auto;
+}
+
+.profile-image img {
+  width: 100%;
+}
+
+.upload-btn {
+  color: #FF5545 !important;
+  background-color: white;
+  border: 1px solid #FF5545;
+  border-radius: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+
+}
+
+.images-list {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  display: inline-block;
+  margin: 5px 5px 0 0;
+}
+
+.uploaded-images-thumb {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+}
   
   
   

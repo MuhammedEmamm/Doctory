@@ -1,4 +1,3 @@
-
 #navlinks {
   border-right: 1px solid #FF5545;
   color: white;
@@ -41,13 +40,14 @@
   text-align: left;
 }
 
-#buttonsintro {
+.buttonsintro {
   border-radius: 5px;
   width: 100%;
   color: #fff;
   padding: 3%;
   background-color: #FF5545;
-  border: 1px solid #FF5545
+  border: 1px solid #FF5545;
+  cursor: pointer;
 }
 
 #introfooter {
@@ -99,11 +99,11 @@ h2 {
 
 
 
-#firstpairs {
+.firstpairs {
   margin-top: 0%;
 }
 
-#twopairs {
+.twopairs {
   margin-top: 45%;
 }
 
@@ -119,8 +119,37 @@ h2 {
 
 
 @media screen and (max-width: 600px) {
+  .schedule {
+    height: 30px;
+    margin-bottom: 15px;
+    overflow-x: scroll;
+  }
 
-  .mobile-view{
+  .headcard {
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 30px;
+    width: 510px;
+
+  }
+
+  .headinfo {
+    color: #FF5545 !important;
+    background-color: #d8d6d6;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 4%;
+    margin-right: 4%;
+    padding: 2%;
+    width: 80px;
+    display: inline-block;
+
+  }
+
+  .mobile-view {
     margin-top: 20px;
   }
 
@@ -132,10 +161,10 @@ h2 {
     padding: 1%;
     border-radius: 5px;
     margin-bottom: 15px;
-    height:640px;
-  
+    height: 640px;
+
   }
-  
+
   .circle {
     background-image: url('../../assets/images/Ellipse11copy2.png');
     background-position: center;
@@ -146,11 +175,11 @@ h2 {
   }
 
 
-  #firstpairs {
+  .firstpairs {
     margin-top: -10%;
   }
 
-  #twopairs {
+  .twopairs {
     margin-top: 65%;
   }
 
@@ -159,19 +188,22 @@ h2 {
   }
 
 
-  #doc-img {
+  .doc-img {
     width: 100px;
     height: 100px;
     position: relative;
     margin-top: 15%;
+    border: 1px solid #FF5545;
+    background-color: white
   }
+
   #doc-profile {
     margin-top: 17%;
     background-color: #e1e1e1;
     height: 100%;
     padding: 5%;
   }
-  
+
 
 
 }
@@ -186,6 +218,44 @@ h2 {
 }
 
 @media screen and (min-width: 700px) {
+  .schedule {
+    max-height: 99px;
+    overflow: auto;
+
+  }
+
+  .headinfo {
+    color: #FF5545 !important;
+    background-color: #d8d6d6;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    padding: 2%;
+    height: 100%;
+  }
+
+  .headinfo:hover {
+    color: #FF5545 !important;
+    background-color: #d8d6d6;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    padding: 1%;
+    border: 1px solid #FF5545;
+  }
+
+  .headcard {
+
+    overflow: auto;
+    max-height: 100%;
+
+  }
 
   #profile {
     background-image: url('../../assets/images/Rounded.png');
@@ -196,34 +266,40 @@ h2 {
     border-radius: 5px;
     /* height: 50%; */
     margin-bottom: 15px;
-    height:650px
-  
+    height: 650px
   }
-  #doc-profile {
-  margin-top: -8%;
-  background-color: #e1e1e1;
-  height: 100%;
-  padding: 5%;
-}
 
-  #doc-img {
+  #doc-profile {
+    margin-top: -8%;
+    background-color: #e1e1e1;
+    height: 100%;
+    padding: 5%;
+  }
+
+  .doc-img {
     width: 150px;
     height: 150px;
     position: relative;
     margin-top: 15%;
+    border: 1px solid #FF5545;
+    background-color: white
   }
-  
+
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #profile-head {
   padding: 2%;
 }
 
-#docdesc {
+.docdesc {
   color: white;
 }
 
-#doccontent {
+.doccontent {
   color: #FF5545;
 }
 
@@ -245,14 +321,14 @@ h2 {
   background-color: #e1e1e1;
 }
 
-#doclist-head {
+.doclist-head {
   color: #fff;
   background-color: #FF5545;
   border-radius: 5px 5px 0 0;
 
 }
 
-#dropdownform {
+.dropdownform {
   border-bottom: 1px solid #bdbdbd;
   border-top: 2px solid #ffffff;
   border-right: 2px solid #ffffff;
@@ -265,7 +341,7 @@ h2 {
 }
 
 
-#inputform {
+.inputform {
   border-bottom: 1px solid #bdbdbd;
   border-top: 2px solid #ffffff;
   border-right: 2px solid #ffffff;
@@ -453,4 +529,67 @@ label {
   font-size: 20px !important;
   font-weight: bold !important;
   margin-top: 15px;
+}
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+
+#loading {
+  display: none;
+  width: 50px;
+  height: 50px;
+  margin-left: 45%;
+}
+
+agm-map {
+  height: 250px;
+  border-radius: 10px;
+}
+
+.schedule-head {
+  color: #fff;
+  background-color: #fff;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 1%;
+
+}
+
+#sliderbtn {
+  color: #FF5545;
+  width: 100%;
+  height: 90%;
+}
+#data1{
+  visibility: hidden;
+}
+#one:hover  #data1{
+  visibility: visible;
+}
+
+#data2{
+  visibility: hidden;
+}
+#two:hover  #data2{
+  visibility: visible;
+}
+
+#data3{
+  visibility: hidden;
+}
+#three:hover  #data3{
+  visibility: visible;
+}
+
+#data4{
+  visibility: hidden;
+}
+#four:hover  #data4{
+  visibility: visible;
 }

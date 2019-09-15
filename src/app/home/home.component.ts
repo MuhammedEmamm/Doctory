@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeApiService } from './home-api.service'
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,19 +8,23 @@ import { HomeApiService } from './home-api.service'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private homeapi: HomeApiService) { }
+  constructor(private homeapi: HomeApiService, private Cookie: CookieService) { }
   AboutUs: {
     Content: any,
     Title: any
   } = {
-    Content: '',
+      Content: '',
       Title: ''
     };
+  
   ngOnInit() {
-    this.homeapi.GetAbout().subscribe((res: any) => {
-      if (res)
+    this.homeapi.GetAbout().subscribe((res: any[]) => {
+      if (res !== undefined && res.length) {
         this.AboutUs = res[0];
+      }
+
     });
+    
   }
 
 }

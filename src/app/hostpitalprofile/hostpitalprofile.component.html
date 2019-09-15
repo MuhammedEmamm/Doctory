@@ -1,28 +1,48 @@
+<div class="page-loader-wrapper" id="page-loader">
+  <div class="loader">
+    <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/loading-icon.gif" width="200" height="200"
+        alt="Oreo">
+    </div>
+    <p>Please wait...</p>
+  </div>
+</div>
 <section id="hospital-profile">
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-lg-5 col-md-12 shadow" id="profile">
       <div class="row">
         <div class="col-md-12" style="padding:1%">
-          <h3 class="text-center"><b id="docdesc">Hospital Name</b></h3>
-          <h6 class="text-center"><b id="docdesc">Specialty</b></h6>
-          <h6 class="text-center"><b id="docdesc"><i class="fas fa-star" id="docdesc"></i><i class="fas fa-star" id="docdesc"></i><i
-                class="fas fa-star" id="docdesc"></i> <i class="far fa-star"></i><i class="far fa-star" id="docdesc"></i></b></h6>
+          <br>
+          <br>
+          <h3 class="text-center"><b class="docdesc">{{FacDetails.Name}}</b></h3>
+          <h6 class="text-center">
+            <!-- <b class="docdesc">{{FacDetails.Specialities[0].name}}</b>
+             -->
+          </h6>
+
+          <h6 class="text-center">
+            <!-- <b id="docdesc"><i class="fas fa-star" id="docdesc"></i><i class="fas fa-star" id="docdesc"></i><i
+                class="fas fa-star" id="docdesc"></i> <i class="far fa-star"></i><i class="far fa-star"
+                id="docdesc"></i></b>
+                 -->
+          </h6>
+
 
         </div>
       </div>
       <div class="row" id="profile-head">
 
-        <div class="col-2 col-md-2">
-          <h6 class="text-center mobile" id="firstpairs" style="color:#fff">Message</h6>
-          
+        <div class="col-2 col-md-2" id="one">
+          <h6 class="text-center mobile" id="firstpairs" style="color:#fff"><span id="data1">{{FacDetails.Email}}</span></h6>
+
           <img src="assets/images/send message.png">
 
         </div>
-        <div class="col-2 col-md-2">
-          <h6 class="text-center mobile" id="twopairs" style="color:#fff ;">Favourite</h6>
+        <div class="col-2 col-md-2"  id="two">
+          <h6 class="text-center mobile" id="twopairs" style="color:#fff ;"><span id="data2">Favourite</span></h6>
 
-          <img src="assets/images/favorite.png">
+          <img src="assets/images/favorite.png" *ngIf="!FacDetails.IsFav">
+          <img src="assets/images/favo2.png" *ngIf="FacDetails.IsFav">
 
 
         </div>
@@ -35,14 +55,14 @@
 
         <div class="col-1 col-md-1"></div>
 
-        <div class="col-2 col-md-2 ">
-          <h6 class="text-center mobile " id="twopairs" style="color:#fff ;">0123456789</h6>
+        <div class="col-2 col-md-2 "  id="three">
+          <h6 class="text-center mobile " id="twopairs" style="color:#fff ;"><span id="data3">{{FacDetails.ContactNumber}}</span></h6>
 
           <img src="assets/images/call doctor.png">
         </div>
 
-        <div class="col-2 col-md-2 ">
-          <h6 class="text-center mobile" id="firstpairs" style="color:#fff ;">Share</h6>
+        <div class="col-2 col-md-2 "  id="four">
+          <h6 class="text-center mobile" id="firstpairs" style="color:#fff ;"><span id="data4">Share</span></h6>
 
           <img src="assets/images/share doctor.png">
 
@@ -53,43 +73,22 @@
       </div>
 
       <div class="row" id="profile-content">
-        <div class="col-md-12">
-          <h6 class="text-center" id="doccontent">192 reviews</h6>
-        </div>
+        <!-- <div class="col-md-12">
+          <h6 class="text-center doccontent">{{FacDetails.Reviews.length}} reviews</h6>
+        </div> -->
 
         <div class=" col-md-10 offset-md-1 d-none d-md-block" id="mapdiv">
 
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="padding:1%">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" id="mapslider"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1" id="mapslider"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2" id="mapslider"></li>
-            </ol>
+        
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <agm-map [latitude]="Lat" [longitude]="Long" [zoom]="9">
+                  <agm-marker [latitude]="Lat" [longitude]="Long"></agm-marker>
+                </agm-map>
                 <div class="col-md-12" id="mapdesc">
-                  <h3 class="text-center" id="doccontent">clinic 1</h3>
-                  <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                </div>
-
-              </div>
-              <div class="carousel-item ">
-                <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                <div class="col-md-12" id="mapdesc">
-                  <h3 class="text-center" id="doccontent">clinic 2</h3>
-                  <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                </div>
-
-              </div>
-              <div class="carousel-item ">
-                <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                <div class="col-md-12" id="mapdesc">
-                  <h3 class="text-center" id="doccontent">clinic 3</h3>
-                  <h6 class="text-center">clinic 1 address clinic 1 address</h6>
+                  <h3 class="text-center doccontent">{{FacDetails.Name}}</h3>
+                  <h6 class="text-center">{{FacDetails.Address}}</h6>
                 </div>
 
               </div>
@@ -99,184 +98,74 @@
         </div>
 
         <div class="col-10  offset-1 d-block d-md-none" id="mapdiv">
-            <div class="swiper-container">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius:5px"></iframe>
-                      <div class="col-md-12" id="mapdesc">
-                        <h3 class="text-center" id="doccontent">clinic 1</h3>
-                        <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius:5px"></iframe>
-                      <div class="col-md-12" id="mapdesc">
-                        <h3 class="text-center" id="doccontent">clinic 1</h3>
-                        <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <iframe class="d-block w-100" id="map" height="200" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius:5px"></iframe>
-                      <div class="col-md-12" id="mapdesc">
-                        <h3 class="text-center" id="doccontent">clinic 1</h3>
-                        <h6 class="text-center">clinic 1 address clinic 1 address</h6>
-                      </div>
-                    </div>
-                    
+          <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <agm-map [latitude]="Lat" [longitude]="Long" [zoom]="11">
+                  <agm-marker [latitude]="Lat" [longitude]="Long"></agm-marker>
+                </agm-map>
+                <div class="col-md-12" id="mapdesc">
+                  <h3 class="text-center doccontent">clinic 1</h3>
+                  <h6 class="text-center">clinic 1 address clinic 1 address</h6>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-            
-                
+              </div>
+             
             </div>
-           
-  
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+
           </div>
+
+
+        </div>
         <hr class=" d-md-none" style="color:#FF5545">
         <div class="d-block d-md-none col-10 offset-1">
-            <div class="swiper-container">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide"><img src="assets/images/Layer4.png" style="border-radius:5px"></div>
-                    <div class="swiper-slide"><img src="assets/images/Layer4.png" style="border-radius:5px"></div>
-                    <div class="swiper-slide"><img src="assets/images/Layer4.png" style="border-radius:5px"></div>
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-            
-                <!-- If we need navigation buttons -->
-                <!-- <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div> -->
+          <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="assets/images/Layer4.png" style="border-radius:5px"></div>
+              <div class="swiper-slide"><img src="assets/images/Layer4.png" style="border-radius:5px"></div>
+              <div class="swiper-slide"><img src="assets/images/Layer4.png" style="border-radius:5px"></div>
             </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> -->
+          </div>
         </div>
 
       </div>
 
     </div>
     <div class="col-lg-5 d-none d-sm-block">
-      <div class="card-header text-center" id="doclist-head">Photos</div>
-      <div class="card mb-3" style="height:600px ; border-radius: 0 0 5px 5px ; ">
+      <div class="card-header text-center doclist-head">Photos</div>
+      <div class="card mb-3" style="min-height:600px ; border-radius: 0 0 5px 5px ; ">
         <div class="card-body">
-          <img src="assets/images/Layer4.png" style="border-radius:5px">
+          <img src="{{FacDetails.Images[0]}}" style="border-radius:5px">
           <br>
           <br>
           <br>
-          <div id="photos-container">
+          <div class="photos-container">
             <div class="row">
 
 
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
+              <div class="col-md-4" *ngFor="let img of FacDetails.Images">
+                <img class="d-block w-100" src="{{img}}" alt="First slide" style="cursor:pointer">
               </div>
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-
               <br>
               <br>
               <br>
               <br>
               <br>
               <br>
-
-
 
             </div>
-
-            <div class="row">
-
-
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-
-
-
-            </div>
-
-            <div class="row">
-
-
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-
-
-
-            </div>
-
-            <div class="row">
-
-
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-              <div class="col-md-4">
-                <img class="d-block w-100" src="assets/images/Layer4.png" alt="First slide">
-
-              </div>
-
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-
-
-
-            </div>
-
-
 
           </div>
 
@@ -288,501 +177,101 @@
   <br>
   <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-10 shadow" id="specs">
+    <div class="col-md-10 shadow specs">
       <div class="row">
         <div class="col-md-12">
           <div class="d-none d-md-block">
-              <h1 id="doccontent" class="text-center"><i class="fas fa-stethoscope fa-lg"></i></h1>
-              <h3 id="doccontent" class="text-center"><b>Sepcialty</b></h3>
-              <h4 class="text-center"><img src="assets/images/linecopy2.png"></h4>
-              
+            <h1 class="text-center doccontent"><i class="fas fa-stethoscope fa-lg"></i></h1>
+            <h3 class="text-center doccontent"><b>Sepcialty</b></h3>
+            <h4 class="text-center"><img src="assets/images/linecopy2.png"></h4>
+
           </div>
           <div class="d-block d-md-none">
-              <h4 id="doccontent" class="text-center"><i class="fas fa-stethoscope"></i></h4>
-              <h5 id="doccontent" class="text-center"><b>Sepcialty</b></h5>
-              
+            <h4 class="text-center doccontent"><i class="fas fa-stethoscope"></i></h4>
+            <h5 class="text-center doccontent"><b>Sepcialty</b></h5>
+
           </div>
-          
+
         </div>
       </div>
       <div class="specs-container">
-        <a class="item hvr-float">
-            <div class="circle">
-              <h1 class="text-center">
-                  <img src="assets/images/eyes1.png" class="image-spec">
-                  
-              </h1>
-              <h4 class="text-center">Specialty</h4>
-            </div>
-              
-              
-          </a>
+        <a class="item hvr-float" *ngFor="let spec of FacDetails.FacilitySpecialities">
+          <div class="circle" (click)="DocsFilter(spec.Id)" [ngClass]="{'active-spec' : Spec == spec.Id}">
+            <h1 class="text-center">
+              <img src="{{spec.ImageUrl}}" class="image-spec">
 
-        <a class="item hvr-float">
-            <div class="circle">
-                <h1 class="text-center">
-                    <img src="assets/images/dentist1.png" class="image-spec">
-             
-                </h1>
-                <h4 class="text-center">Specialty</h4>
+            </h1>
+            <h4 class="text-center">{{spec.name}}</h4>
+          </div>
 
-              </div>
-              
-              
-            </a>
-        
-        <a class="item hvr-float">
-            <div class="circle">
-                <h1 class="text-center">
-                    <img src="assets/images/kids1.png" class="image-spec">
-             
-                </h1>
-                <h4 class="text-center">Specialty</h4>
 
-              </div>
-              
-              
-            </a>
-        
-        <a class="item hvr-float">
-            <div class="circle">
-              <h1 class="text-center">
-                  <img src="assets/images/eyes1.png" class="image-spec">
-           
-              </h1>
-              <h4 class="text-center">Specialty</h4>
-
-            
-            </div>
-              
-              
-          </a>
-
-        <a class="item hvr-float">
-            <div class="circle">
-                <h1 class="text-center">
-                    <img src="assets/images/dentist1.png" class="image-spec">
-             
-                </h1>
-                <h4 class="text-center">Specialty</h4>
-
-              </div>
-              
-              
-            </a>
-        
-        <a class="item hvr-float">
-            <div class="circle">
-                <h1 class="text-center">
-                    <img src="assets/images/kids1.png" class="image-spec">
-             
-                </h1>
-                <h4 class="text-center">Specialty</h4>
-
-              </div>
-              
-              
-            </a>
-        
-        <a class="item hvr-float">
-            <div class="circle">
-                <h1 class="text-center">
-                    <img src="assets/images/kids1.png" class="image-spec">
-             
-                </h1>
-                <h4 class="text-center">Specialty</h4>
-
-              </div>
-              
-              
-            </a>
-        
-            <a class="item hvr-float">
-                <div class="circle">
-                    <h1 class="text-center">
-                        <img src="assets/images/dentist1.png" class="image-spec">
-                 
-                    </h1>
-                    <h4 class="text-center">Specialty</h4>
-
-                  </div>
-                  
-                  
-                </a>
-            
-            <a class="item hvr-float">
-                <div class="circle">
-                    <h1 class="text-center">
-                        <img src="assets/images/kids1.png" class="image-spec">
-                 
-                    </h1>
-                    <h4 class="text-center">Specialty</h4>
-
-                  </div>
-                  
-                  
-                </a>
-            
-            <a class="item hvr-float">
-                <div class="circle">
-                  <h1 class="text-center">
-                      <img src="assets/images/eyes1.png" class="image-spec">
-               
-                  </h1>
-                  <h4 class="text-center">Specialty</h4>
-
-                
-                </div>
-                  
-                  
-              </a>
-    
-            <a class="item hvr-float">
-                <div class="circle">
-                    <h1 class="text-center">
-                        <img src="assets/images/dentist1.png" class="image-spec">
-                 
-                    </h1>
-                    <h4 class="text-center">Specialty</h4>
-
-                  </div>
-                  
-                  
-                </a>
-            
-            <a class="item hvr-float">
-                <div class="circle">
-                    <h1 class="text-center">
-                        <img src="assets/images/kids1.png" class="image-spec">
-                 
-                    </h1>
-                    <h4 class="text-center">Specialty</h4>
-
-                  </div>
-                  
-                  
-                </a>
-            
-            <a class="item hvr-float">
-                <div class="circle">
-                    <h1 class="text-center">
-                        <img src="assets/images/kids1.png" class="image-spec">
-                 
-                    </h1>
-                    <h4 class="text-center">Specialty</h4>
-
-                  </div>
-                  
-                  
-                </a>
-
+        </a>
       </div>
     </div>
   </div>
   <br>
   <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10 shadow" id="docs">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="d-none d-md-block">
-                <h1 id="doccontent" class="text-center"><i class="fas fa-user-md fa-lg"></i></h1>
-                <h3 id="doccontent" class="text-center"><b>Our Doctors</b></h3>
-                <h4 class="text-center"><img src="assets/images/linecopy2.png"></h4>
-                
-            </div>
-            <div class="d-block d-md-none">
-                <h4 id="doccontent" class="text-center"><i class="fas fa-user-md"></i></h4>
-                <h5 id="doccontent" class="text-center"><b>Our Doctors</b></h5>
-            </div>
-            
+    <div class="col-md-1"></div>
+    <div class="col-md-10 shadow docs">
+      <div class="row" id="docs">
+        <div class="col-md-12">
+          <div class="d-none d-md-block">
+            <h1 class="text-center doccontent"><i class="fas fa-user-md fa-lg"></i></h1>
+            <h3 class="text-center doccontent"><b>Our Doctors</b></h3>
+            <h4 class="text-center"><img src="assets/images/linecopy2.png"></h4>
+
           </div>
-        </div>
-        <div class="docs-container">
-          <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-  
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-  
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-   
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-  
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-   
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-   
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-  
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-     
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-   
-            <a class="item hvr-float" >
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-  
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-    
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-    
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/Medical_Professional_stock.png">
-                </h1>
-                <h4 class="text-center">Doctor Name</h4>
-                <h5 class="text-center">Title</h5>
-                <h6 class="text-center">
-                    <i class="fas fa-star" id="docicon"></i><i class="fas fa-star" id="docicon"></i><i class="fas fa-star"
-                      id="docicon"></i> <i class="far fa-star"></i><i class="far fa-star"></i>
-                </h6>                
-                
-            </a>
-  
+          <div class="d-block d-md-none">
+            <h4 class="text-center doccontent"><i class="fas fa-user-md"></i></h4>
+            <h5 class="text-center doccontent"><b>Our Doctors</b></h5>
+          </div>
+
         </div>
       </div>
+      <div class="docs-container">
+        <a class="item hvr-float" *ngFor="let doc of FacDocs">
+          <h1 class="text-center">
+            <a routerLink="/doc-profile/{{doc.Id}}/{{FacDetails.Id}}"> <img class="rounded-circle doc-img"
+                src="{{doc.ImageUrl}}" (error)="doc.ImageUrl = 'assets/images/doctor.png'"></a>
+          </h1>
+          <h4 class="text-center" style="color:#FF5545"><a
+              routerLink="/doc-profile/{{doc.Id}}/{{FacDetails.Id}}">{{doc.Name}}</a></h4>
+          <h5 class="text-center">{{doc.Qualification}}</h5>
+          <h6 class="text-center">
+            <!-- s -->
+          </h6>
+
+        </a>
+      </div>
+    </div>
   </div>
   <br>
   <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10 shadow" id="docs">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="d-none d-md-block">
-            <h1 id="doccontent" class="text-center"><i class="fas fa-file-medical fa-lg"></i></h1>
-            <h3 id="doccontent" class="text-center"><b>Insurance</b></h3>
+    <div class="col-md-1"></div>
+    <div class="col-md-10 shadow docs">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="d-none d-md-block">
+            <h1 class="text-center doccontent"><i class="fas fa-file-medical fa-lg"></i></h1>
+            <h3 class="text-center doccontent"><b>Insurance</b></h3>
             <h4 class="text-center"><img src="assets/images/linecopy2.png"></h4>
           </div>
           <div class="d-block d-md-none">
-              <h4 id="doccontent" class="text-center"><i class="fas fa-file-medical fa-lg"></i></h4>
-              <h5 id="doccontent" class="text-center"><b>Insurance</b></h5>
-            </div>
+            <h4 class="text-center doccontent"><i class="fas fa-file-medical fa-lg"></i></h4>
+            <h5 class="text-center doccontent"><b>Insurance</b></h5>
           </div>
         </div>
-        <div class="ins-container">
-          <a class="item  hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-  
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-            <a class="item hvr-float">
-                <h1 class="text-center">
-                    <img class="rounded-circle" id="doc-img" src="assets/images/check-up-clinic-dentist-117097.png">
-                </h1>
-                <h4 class="text-center">Insurance</h4>
-                
-            </a>
-        </div>
       </div>
+      <div class="ins-container">
+        <a class="item  hvr-float" *ngFor="let ins of FacDetails.InsuranceCompanies">
+          <h1 class="text-center">
+            <img class="rounded-circle doc-img" src="{{ins.ImageUrl}}">
+          </h1>
+          <h4 class="text-center" style="color:#FF5545">{{ins.Name}}</h4>
+
+        </a>
+      </div>
+    </div>
   </div>
   <br>
   <div class="row">
@@ -793,7 +282,7 @@
         <li class="nav-item col-4 col-md-4" style="border-right:2px solid #bbbbbbbb">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#hom" role="tab" aria-controls="home"
             aria-selected="true">
-            <p class="text-center">Profile</p>
+            <p class="text-center">About Us</p>
           </a>
         </li>
         <li class="nav-item col-4 col-md-4" style="border-right:2px solid #bbbbbbbb">
@@ -812,75 +301,21 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-tab">
           <div id="doctabcontent">
-            <div id="prostate">
-              <h5 id="doccontent"><b>Professional Statement</b></h5>
-              <p>
-                Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
-                synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
-                butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-                squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher
-                voluptate nisi qui
-              </p>
-              <ul class="list-unstyled">
-                <li>denim</li>
-                <li>Raw</li>
-                <li>denim</li>
-                <li>Raw</li>
-                <li>denim</li>
-                <li>Raw</li>
-                <li>denim</li>
-                <li>Raw</li>
-                <li>denim</li>
-                <li>Raw</li>
-              </ul>
-            </div>
-
-            <div id="certs">
-              <h5 id="doccontent"><b>Certifications</b></h5>
-              <h6>
-                1-denim
-              </h6>
-              <h6>
-                2-Raw
-              </h6>
-              <h6>
-                3-denim
-              </h6>
-              <h6>
-                4-Raw
-              </h6>
+            <div class="prostate" innerHTML={{FacDetails.Services}}>
 
             </div>
-
-            <div id="prostate">
-              <h5 id="doccontent"><b>Experience</b></h5>
-              <p>
-                Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
-                synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
-                butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-                squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher
-                voluptate nisi qui
-              </p>
-
-            </div>
-
           </div>
         </div>
-        <div class="tab-pane fade" id="clinic" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie locavore,
-          accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial
-          PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth
-          letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud
-          organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit
-          sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut
-          DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui
-          sapiente accusamus tattooed echo park.</div>
-        <div class="tab-pane fade" id="rating" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape wayfarers,
-          ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table
-          readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy
-          salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.
-          Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog.
-          Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable
-          tofu synth chambray yr.</div>
+        <div class="tab-pane fade" id="clinic" role="tabpanel" aria-labelledby="profile-tab">
+          No Reviews.
+        </div>
+        <div class="tab-pane fade" id="rating" role="tabpanel" aria-labelledby="contact-tab">
+
+          <p innerHTML="{{FacDetails.GeneralInfo}}">
+
+          </p>
+
+        </div>
 
       </div>
 

@@ -3,20 +3,134 @@
     background-color: #ddd;
     padding: 5%;
     padding-top: 7%;
-    margin-top: 55px; 
+    margin-top: 55px;
   }
+
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    bottom: 0px;
+    left: 45px;
+    cursor: pointer;
+
+  }
+
+  .doc-img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-top: 15%;
+    border: 1px solid #FF5545;
+
+  }
+
 }
+
 @media screen and (min-width: 600px) {
   #signup {
     background-color: #ddd;
     padding: 5%;
     padding-top: 7%;
   }
+
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    bottom: 0px;
+    left: 70px;
+    cursor: pointer;
+
+  }
+
+  .doc-img {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin-top: 15%;
+    border: 1px solid #FF5545;
+
+  }
 }
+
+.circle {
+  background-image: url('../../assets/images/Ellipse11copy2.png');
+  background-position: center;
+  background-size: 75px 100%;
+  background-repeat: no-repeat;
+  height: 70px;
+
+}
+
+.profile-image-container {
+  width: 150px;
+  height: 170px;
+  margin: 0 auto 0 auto;
+  position: relative;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 100%;
+  border: 5px solid #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+  margin: 20px auto 0px auto;
+}
+
+.profile-image img {
+  width: 100%;
+}
+
+.upload-btn {
+  color: white;
+  background-color: white;
+  border: 1px solid #FF5545;
+  border-radius: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+
+}
+
+.images-list {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  display: inline-block;
+  margin: 5px 5px 0 0;
+}
+
+.uploaded-images-thumb {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+}
+
 .wrapper {
   display: block;
 }
 
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
 
 #doclist-head {
   color: #fff;
@@ -46,7 +160,7 @@
 hr {
   background-color: black;
   margin-top: 0%;
-  font-weight: normal ;
+  font-weight: normal;
 }
 
 ::placeholder {
@@ -54,7 +168,7 @@ hr {
   font-weight: bold;
 }
 
-#icons {
+.icons {
   color: #FF5545;
 }
 
@@ -64,7 +178,8 @@ hr {
   color: #fff;
   padding: 1%;
   background-color: #FF5545;
-  border: 1px solid #FF5545
+  border: 1px solid #FF5545;
+  cursor: pointer;
 }
 
 .circle-form {
@@ -84,4 +199,20 @@ hr {
   padding: 1%;
   background-color: #3b5998;
   border: 1px solid #3b5998
+}
+
+.dropdownform {
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  color: #000;
+  width: 100%;
+}
+
+#loading {
+  display: none;
+  width: 80px;
+  height: 80px;
+  margin-left: 40%;
 }

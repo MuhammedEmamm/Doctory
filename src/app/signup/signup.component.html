@@ -1,172 +1,250 @@
+<section id="signup">
+  <div class="row">
+    <div class="col-lg-4 col-md-2"></div>
+    <div class="col-lg-4 col-md-8">
+      <div class="card-header text-center" id="doclist-head">
+        <h4>CREATE AN ACCOUNT</h4>
+      </div>
+      <div class="card mb-3" id="login-div">
+        <div class="card-body">
+          <form id="sign-form" [formGroup]="Registerform" (ngSubmit)="SignUpform()">
 
-  <section id="signup">
-    <div class="row">
-      <div class="col-lg-4 col-md-2"></div>
-      <div class="col-lg-4 col-md-8">
-        <div class="card-header text-center" id="doclist-head">
-          <h4>CREATE AN ACCOUNT</h4>
-        </div>
-        <div class="card mb-3" id="login-div">
-          <div class="card-body">
-            <form id="sign-form">
-
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-4 col-md-4"></div>
-                  <div class="col-4 col-md-5">
-                    <div class="circle-form"></div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-4 col-md-4"></div>
+                <div class="col-4 col-md-4">
+                  <h5 class="text-center">
+                    <img class="rounded-circle doc-img" [src]="Image">
+                  </h5>
+                  <div class="upload-btn-wrapper">
+                    <button class="upload-btn"><i class="fas fa-camera icons"></i></button>
+                    <input type="file" name="myfile" (change)="onFileChanged($event)" />
                   </div>
-                </div>
-
-              </div>
-              <br>
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-1 col-md-1"></div>
-                  <div class="col-1 col-md-1">
-                    <h3 class="text-center">
-                      <i class="fas fa-user" id="icons"></i>
-
-                    </h3>
-
+                  <!-- <div class="circle-form">
+                    <input type="file" style="width:90%;margin-top:25%" (change)="onFileChanged($event)">
+                    
                   </div>
-                  <div class="col-4 col-md-4">
-                    <input type="text" placeholder="First Name" class="input-form">
-                    <hr>
-                  </div>
-                  <div class="col-4 col-md-4">
-                      <input type="text" placeholder="Last Name" class="input-form">
-                    <hr>
-
-                  </div>
-
-                </div>
-
-
-              </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-1 col-md-1"></div>
-                  <div class="col-1 col-md-1">
-                    <h3 class="text-center"><i class="far fa-calendar" id="icons"></i></h3>
-                  </div>
-                  <div class="col-8 col-md-8">
-                    <input type="date" class="input-form" placeholder="DD/MM/YY">
-                    <hr>
-                  </div>
-
-                </div>
-
-              </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-1 col-md-1 "></div>
-                  <div class="col-1 col-md-1">
-                    <h3 class="text-center"><i class="fas fa-venus-mars" id="icons"></i></h3>
-                  </div>
-                  <div class="col-3 col-md-2">
-                    <b style="font-size:10px">Gender</b>
-                  </div>
-                  <div class="col-2 col-md-3">
-                    <input type="radio" name="Gender">
-                    <label style="font-size:11px">&nbsp;<b>Male</b></label>
-
-                  </div>
-                  <div class="col-2 col-md-3">
-                    <input type="radio" name="Gender">
-                    <label style="font-size:11px">&nbsp;<b>Female</b></label>
-                  </div>
-
+                   -->
                 </div>
               </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-1 col-md-1"></div>
-                  <div class="col-1 col-md-1">
-                    <h3 class="text-center"><i class="fas fa-mobile-alt" id="icons"></i></h3>
-                  </div>
-                  <div class="col-8 col-md-8">
-                    <input type="number" class="input-form" placeholder="Mobile Number">
-                    <hr>
 
-                  </div>
-                </div>
-
-              </div>
-
-
-              <div class="col-md-12">
-                <div class="row">
-
-                  <div class="col-1 col-md-1"></div>
-                  <div class="col-1 col-md-1">
-                    <h3 class="text-center"><i class="fas fa-envelope" id="icons"></i></h3>
-                  </div>
-                  <div class="col-8 col-md-8">
-                    <input type="email" class="input-form" placeholder="E-mail">
-                    <hr>
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-1 col-md-1"></div>
-                  <div class="col-1 col-md-1">
-                    <h3 class="text-center"><i class="fas fa-unlock-alt" id="icons"></i></h3>
-                  </div>
-                  <div class="col-8 col-md-8">
-                    <input type="password" class="input-form" placeholder="Password">
-                    <hr>
-                  </div>
-                  
-                </div>
-
-              </div>
-
-
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-1 col-md-1"></div>
-                  <div class="col-1 col-md-1">
-                    <input type="checkbox">
-                  </div>
-                  <div class="col-7 col-md-7">
-                    <h5>Accept terms & conditions</h5>
-                  </div>
-
-
-                </div>
-
-
-              </div>
+            </div>
+            <br>
+            <div class="col-md-12">
               <div class="row">
                 <div class="col-1 col-md-1"></div>
-                <div class="col-10 col-md-10">
-                  <button class="buttonsintro">CREATE ACCOUNT</button>
+                <div class="col-1 col-md-1">
+                  <h3 class="text-center">
+                    <i class="fas fa-user icons"></i>
+                  </h3>
+
+                </div>
+                <div class="col-4 col-md-4">
+                  <input type="text" placeholder="First Name" class="input-form" formControlName="FirstName"
+                    [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }">
+                  <hr>
+                  <div *ngIf="submitted && f.FirstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.FirstName.errors.required"> First Name is required</div>
+                  </div>
+
+                </div>
+                <div class="col-4 col-md-4">
+                  <input type="text" placeholder="Last Name" class="input-form" formControlName="LastName"
+                    [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }">
+                  <hr>
+                  <div *ngIf="submitted && f.LastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.LastName.errors.required"> Last Name is required</div>
+                  </div>
                 </div>
 
               </div>
-              <br>
+
+
+            </div>
+            <div class="col-md-12">
               <div class="row">
-                <div class="col-1  col-md-1"></div>
-                <div class="col-10 col-md-10">
-                  <button class="buttonsintrofb"><i class="fab fa-facebook-f fa-lg"></i>&nbsp;&nbsp;&nbsp;CONNECT WITH
-                    FACEBOOK</button>
+                <div class="col-1 col-md-1"></div>
+                <div class="col-1 col-md-1">
+                  <h3 class="text-center"><i class="far fa-calendar icons"></i></h3>
+                </div>
+                <div class="col-8 col-md-8">
+                  <input type="date" class="input-form" placeholder="DD/MM/YY" formControlName="DOB"
+                    [ngClass]="{ 'is-invalid': submitted && f.DOB.errors }">
+                  <hr>
+                  <div *ngIf="submitted && f.DOB.errors" class="invalid-feedback">
+                    <div *ngIf="f.DOB.errors.required"> Date of birth is required</div>
+                  </div>
+
                 </div>
 
               </div>
 
-            </form>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-1 col-md-1 "></div>
+                <div class="col-1 col-md-1">
+                  <h3 class="text-center"><i class="fas fa-venus-mars icons"></i></h3>
+                </div>
+                <div class="col-1 col-md-1">
+                  <!-- <b style="font-size:10px">Gender</b> -->
+                </div>
+
+                <div class="col-4 col-md-3">
+                  <input type="radio" value="true" name="Gender" formControlName="Gender"
+                    [ngClass]="{ 'is-invalid': submitted && f.Gender.errors }">
+                  <label style="font-size:11px">&nbsp;<b>Male</b></label>
+
+                </div>
+                <div class="col-4 col-md-3">
+                  <input type="radio" value="false" name="Gender" formControlName="Gender"
+                    [ngClass]="{ 'is-invalid': submitted && f.Gender.errors }">
+                  <label style="font-size:11px">&nbsp;<b>Female</b></label>
+                </div>
+
+                <div  *ngIf="submitted && f.Gender.errors" class="invalid-feedback text-center">
+                  <div *ngIf="f.Gender.errors.required"> Gender is required</div>
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-1 col-md-1"></div>
+                <div class="col-1 col-md-1">
+                  <h3 class="text-center"><i class="fas fa-mobile-alt icons"></i></h3>
+                </div>
+                <div class="col-8 col-md-8">
+                  <div class="row">
+                    <div class="col-5">
+                      <select class="dropdownform" [(ngModel)]="Code" [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let code of Codes" [value]="code.code">{{code.name}} ({{code.code}})</option>
+
+                      </select>
+                    </div>
+                    <div class="col-7">
+                      <input type="text" class="input-form" placeholder="Mobile Number" formControlName="MobileNumber"
+                        [ngClass]="{ 'is-invalid': submitted && f.MobileNumber.errors }">
+                    </div>
+                  </div>
+
+                  <hr>
+                  <div *ngIf="submitted && f.MobileNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.MobileNumber.errors.required"> Phone Number is required</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+
+                <div class="col-1 col-md-1"></div>
+                <div class="col-1 col-md-1">
+                  <h3 class="text-center"><i class="fas fa-envelope icons"></i></h3>
+                </div>
+                <div class="col-8 col-md-8">
+                  <input type="email" class="input-form" placeholder="E-mail" formControlName="Email"
+                    [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
+                  <hr>
+                  <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                    <div *ngIf="f.Email.errors.required">Email is required</div>
+                    <div *ngIf="f.Email.errors.email">Email must be a valid email address</div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-1 col-md-1"></div>
+                <div class="col-1 col-md-1">
+                  <h3 class="text-center"><i class="fas fa-unlock-alt icons"></i></h3>
+                </div>
+                <div class="col-8 col-md-8">
+                  <input type="password" class="input-form" placeholder="Password" formControlName="Password"
+                    [ngClass]="{ 'is-invalid': submitted && f.Password.errors }">
+
+                  <hr>
+                  <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                    <div *ngIf="f.Password.errors.required"> Password is required</div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-1 col-md-1"></div>
+                <div class="col-1 col-md-1">
+                  <h3 class="text-center"><i class="far fa-id-card icons"></i></h3>
+                </div>
+                <div class="col-8 col-md-8">
+                  <input type="text" class="input-form" placeholder="Cpr Number" formControlName="CprNumber"
+                    [ngClass]="{ 'is-invalid': submitted && f.CprNumber.errors }">
+
+                  <hr>
+                  <div *ngIf="submitted && f.CprNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.CprNumber.errors.required"> CprNumber is required</div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-1 col-md-1"></div>
+                <div class="col-1 col-md-1">
+                  <input type="checkbox" formControlName="Check"
+                    [ngClass]="{ 'is-invalid': submitted && f.Check.errors }">
+
+                </div>
+                <div class="col-7 col-md-7">
+                  <h5>Accept terms & conditions</h5>
+                </div>
+                <div *ngIf="submitted && f.Check.errors" class="invalid-feedback">
+                  <div *ngIf="f.Check.errors.required"> Accept Terms is required</div>
+                </div>
 
 
-          </div>
+
+              </div>
+
+
+            </div>
+             -->
+            <div class="row">
+              <div class="col-1 col-md-1"></div>
+              <div class="col-10 col-md-10">
+                <button class="buttonsintro" type="submit" *ngIf="!Loading">CREATE ACCOUNT</button>
+                <h5 class="text-center">
+                  <img src="assets/images/loading-icon.gif" id="loading">
+
+                </h5>
+              </div>
+
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-1  col-md-1"></div>
+              <div class="col-10 col-md-10">
+                <button class="buttonsintrofb"><i class="fab fa-facebook-f fa-lg"></i>&nbsp;&nbsp;&nbsp;CONNECT WITH
+                  FACEBOOK</button>
+              </div>
+
+            </div>
+          </form>
+
         </div>
-
       </div>
 
     </div>
-  </section>
+
+  </div>
+</section>
